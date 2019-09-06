@@ -1,0 +1,117 @@
+.grid-container {
+	display: grid;
+	/* Might have to change this based on the current page as each page will have different row values */
+	grid-template-rows: 6% 6% 70% 6% 6% 6%;
+	height: 100%;
+}
+
+.dynamic-table {
+	max-height: 100%;
+	overflow-x: auto;
+	overflow-y: auto;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+table thead th {
+	position: sticky;
+	top: 0;
+}
+
+thead, th {
+	background-color: #2980b9;
+	color: white;
+	border-bottom: 1px solid black;
+}
+
+th {
+	text-align: left;
+	height: 50px;
+}
+
+td {
+	border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+	/* TODO change this color*/
+	background-color: white;
+}
+
+tbody tr:nth-child(even) {
+	background-color: lightgray;
+}
+
+.radio-container {
+	height: 100%;
+	width: 100%;
+}
+
+.radio-container label {
+	background-color: black;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	display: block;
+}
+
+.radio-container input[type=radio] {
+	display: none;
+}
+
+input[type="radio"]:checked+label {
+	background-color: #2980b9;
+}
+
+.datepickers {
+	width: 100%;
+	display: none;
+}
+
+.datepickers input[type=date] {
+	width: 90%;
+	padding: 2px;
+	margin-left: 5px;
+}
+
+/*
+.label-container > label {
+	display: inline-block;
+	color: blue;
+	background-color: #2980b9;
+	color: white;
+	width: calc(100%/3);
+	text-align: center;
+	transition-duration: 0.25s;
+	height: 100%;
+}
+*/
+
+/*
+#label-thisWeek {
+	border-right: 1px solid black;
+}
+
+#label-betweenDates {
+	border-left: 1px solid black;
+}
+
+#label-thisWeek, #label-nextWeek, #label-betweenDates {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+*/
+
+#button-submit {
+	width: 100%;
+	background-color: #2980b9;
+	color: white;
+	height: 100%;
+}

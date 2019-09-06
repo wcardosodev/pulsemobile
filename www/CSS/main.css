@@ -1,0 +1,224 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	min-height: 100%;
+	max-height: 100%;
+	height: 100vh;
+	font-family: "Lucida Sans", sans-serif;
+}
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
+
+[class*="col-"] {
+	float: left;
+	height: 100%;
+	/*padding: 15px;*/
+}
+
+.row:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Using the new nav bar with icons instead of text */
+.topnav {
+	margin: 0px;
+	padding: 6px 0px;
+	box-shadow: 0px 1px 3px grey;
+	overflow: hidden;
+}
+
+.topnav > a, .topnav > i {
+	float: left;
+	min-width: 20%;
+	text-align: center;
+}
+
+.topnav i {
+	background-color: white;
+	color: black;
+}
+/*
+
+.topnav #sidenav-icon {
+	float: right;
+}
+*/
+
+.topnav .sidenav {
+	height: 100%;
+	width: 0%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: black;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+}
+
+.topnav .sidenav a {
+	padding: 8px 8px 8px 8px;
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+	display: block;
+	transition: 0.3s;
+}
+
+.topnav .sidenav i {
+	background-color: black;
+	color: white;
+	margin: 5%;
+	display: inline;
+}
+
+.topnav .sidenav .closebtn {
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	right: 15px;
+	font-size: 25px;
+}
+
+h3 {
+	text-align: center;
+}
+
+
+
+/*
+	Using the old nav bar with text instead of icons
+
+.top-nav {
+	background-color: #2980b9;
+	overflow: hidden;
+	height: 7.5%;
+}
+
+.top-nav a {
+	float: left;
+	height: 100%;
+	padding: 20px 0px;
+	min-width: 25%;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	color: white;
+}
+
+.top-nav a:hover {
+	background-color: orange;
+}
+*/
+
+/*
+.top-nav li {
+	display: inline-block;
+	min-width: calc(100%/4);
+	height: 100%;
+}
+
+.top-nav li > a {
+	text-decoration: none;
+	color: white;
+	padding: 15px;
+	display: block;
+	height: 100%;
+}
+*/
+
+/*
+.top-nav > a {
+	min-width: 25%;
+	color: white;
+	text-decoration: none;
+	float: left;
+	background-color: #2980b9;
+	display: inline-block;
+	padding: 25px 0px;
+	text-align: center;
+	transition-duration: 0.25s;
+}
+
+.top-nav > a:hover {
+	background-color: #f39c12;
+}
+*/
+
+/*
+.top-nav {
+	width: 100%;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #2980b9;
+	border-bottom: 1.5px solid black;
+	box-sizing: border-box;
+	height: 8vh;
+}
+
+.top-nav > .item {
+	min-width: 25%;
+  float: left;
+  overflow: hidden;
+	display: inline-block;
+	text-align: center;
+}
+
+.top-nav > .item > .btn{
+  color: white;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: .25s;
+	padding: 25px 0px;
+}
+
+.top-nav > .item:hover, .top-nav > .item > .smenu > a:hover{
+  background-color: #f39c12;
+	color: white;
+}
+
+.top-nav .smenu {
+  min-width: 160px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.top-nav > .item > .smenu a {
+  text-decoration: none;
+  text-align: left;
+  float: none;
+  display: block;
+  padding: 12px 16px;
+	color: black;
+}
+
+.top-nav > .item:hover .smenu {
+  display: block;
+}*/

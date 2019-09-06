@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title>Blank App</title>
+		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
+		<link rel="stylesheet" type="text/css" href="./CSS/timesheets.css">
+		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+		<!-- Navigation / Tab bar -->		
+		<div class="top-nav">
+    	<div class="item">
+        <a class="btn">Shifts</a>
+				<div class="smenu">
+					<a href="./myShifts.html">My Shifts</a>
+					<a href="">Available Shifts</a>
+				</div>
+      </div>
+      <div class="item">
+        <a class="btn" href="./timesheets.html">Timesheets</a>
+      </div>
+      <div class="item">
+        <a class="btn" href="./myAvailability.html">Availability</a>
+      </div>
+      <div class="item">
+        <a class="btn" href="./myAccounts.html">Accounts</a>
+      </div>
+    </div>
+		
+		<div class="table">
+			<h3>Timesheet</h3>
+			<table id="timesheet-table">
+				<thead>
+					<tr>
+						<th>Day</th>
+						<th>Date</th>
+						<th>Location</th>
+						<th>Start Time</th>
+						<th>Finish Time</th>
+						<th>Time on Break</th>
+					</tr>	
+				</thead>
+				<tbody>
+				</tbody>			
+			</table>
+		</div>
+		
+		<input type="radio" name="shift-date" value="This Week" checked>This Week<br>
+		<input type="radio" name="shift-date" value="Next Week">Next Week<br>
+		<!-- If between dates is selected show the date pickers --> 
+		<input type="radio" name="shift-date" value="Between Dates">Between Dates<br>
+		<div class="datepickers">
+			<input type="date" id="date1">
+			<input type="date" id="date2">
+		</div>
+		<input type="button" onclick="fillShiftTable()" value="Submit">
+		<input type="button" onclick="clearShiftTable()" value="Reset Table">
+		
+		<!-- add squiggle -->
+		<div id="signatureparent">
+			<div id="signature">
+			</div>			
+			<input type="button" id="signature-confirm" value="Confirm">
+			<input type="button" id="signature-redoLastStroke" value="Re-do Last Stroke">
+			<input type="button" id="signature-reset" value="Reset">			
+		</div>
+		
+		<script type="text/javascript" src="./JS/jSignature/libs/jSignature.min.js"></script>
+		<script type="text/javascript" src="./JS/timesheets.js"></script>
+	</body>
+</html>

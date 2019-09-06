@@ -1,0 +1,11 @@
+.grid-container {
+	display: grid;
+	/* Might have to change this based on the current page as each page will have different row values */
+	/* 1st row = navbar should always be 6% */
+	grid-template-rows: 6% 10% 10% 10%;
+	height: 100%;
+}
+
+.menu-item {
+	background-color: red;
+}

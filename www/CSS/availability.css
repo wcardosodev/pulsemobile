@@ -1,0 +1,94 @@
+.grid-container {
+	display: grid;
+	/* Might have to change this based on the current page as each page will have different row values */
+	/* 1st row = navbar should always be 6% */
+	grid-template-rows: 6% 6% 20%;
+	height: 100%;
+}
+
+.availability-calendar {
+	height: 100%;
+}
+
+.month-header {
+	background-color: #2980b9;
+	border: 1px solid black;
+	margin: 0px 2px;
+	text-align: center;
+	padding: 40px;
+	height: 100%;
+}
+
+.month-header ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.month-header ul li {
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	display: inline-block;
+}
+
+.month-header .date {
+	padding: 6% 0px 0px 0px;
+}
+
+.month-header .prev {
+	float: left;
+	padding: 10% 0px 0px 2%;
+}
+
+.month-header .next {
+	float: right;
+	padding: 10% 2% 0px 0px;
+}
+
+table {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+thead tr {
+  background-color: #2980b9;
+	color: white;
+	height: 8vh;
+}
+
+tbody tr {
+	background-color: white;
+	height: calc(100%/6);
+}
+
+tbody tr td:hover {
+	background-color: #2980b9;
+	color: white;
+}
+
+table th, table td {
+	border: 1px solid black;
+	text-align: center;
+	width: calc(100%/7);
+}
+
+/* CSS for the colouring of the table cells based on availability */
+table tbody tr td.available {
+	background-color: #2ecc71;
+}
+
+table tbody tr td.working {
+	background-color: yellow;
+}
+
+table tbody tr td.notavailable {
+	background-color: red;
+}
+
+table tbody tr td.holiday {
+	background-color: #7d5fff;
+}

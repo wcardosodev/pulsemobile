@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title>Blank App</title>
+		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
+		
+		<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+		<link rel="stylesheet" type="text/css" href="./CSS/availability.css">
+		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+		<div class="grid-container">
+			<div class="row">
+				<div class="col-12">
+					<div class="topnav">
+						<a href="myShifts.html"><i class="far fa-clock fa-3x fa-fw"></i></a>
+						<a href="timesheets.html"><i class="far fa-edit fa-3x fa-fw"></i></a>
+						<a href="availability.html"><i class="far fa-calendar-alt fa-3x fa-fw"></i></a>
+						<a href="accounts.html"><i class="far fa-user-circle fa-3x fa-fw"></i></a>
+						<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
+						<div class="sidenav">
+							<a class="closebtn">&times;</a>
+							<a href="myShifts.html"><i class="far fa-clock fa-lg fa-fw"></i>Shifts</a>
+							<a href="timesheets.html"><i class="far fa-edit fa-lg fa-fw"></i>Timesheets</a>
+							<a href="availability.html"><i class="far fa-calendar-alt fa-lg fa-fw"></i>Availability</a>
+							<a href="accounts.html"><i class="far fa-user-circle fa-lg fa-fw"></i>Accounts</a>
+						</div>				
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+					<h3>Availability</h3>
+				</div>	
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+						<div class="month-header">
+							<ul>
+								<li class="prev">&#10094;</li>
+								<li class="date"><span id="monthtext">AUGUST</span><br><span id="yeartext">2017</span></li>
+								<li class="next">&#10095;</li>
+							</ul>						
+						</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+					<div class="availability-calendar">
+						<table>
+							<thead>
+								<tr>
+									<th>Mon</th>
+									<th>Tue</th>
+									<th>Wed</th>
+									<th>Thu</th>
+									<th>Fri</th>
+									<th>Sat</th>
+									<th>Sun</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td class="available">0</td>
+									<td class="working">0</td>
+									<td class="notavailable">0</td>
+									<td class="holiday">0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<!-- how to input availability? -->
+<!--
+			<div class="row">
+				<div class="">
+					<div class="col-6">
+						<p>Available buttons</p>					
+					</div>
+					<div class="col-6">
+						<p>Unavailable buttons</p>
+					</div>
+				</div>
+			</div>
+	-->
+		</div>
+		
+		<!-- Do a monthly availability where they can fill in -->
+		<script type="text/javascript" src="./JS/main.js"></script>
+		<script type="text/javascript" src="./JS/availability.js"></script>
+	</body>
+</html>

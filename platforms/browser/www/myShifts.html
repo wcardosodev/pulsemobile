@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title>Blank App</title>
+		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
+		
+		<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+		<link rel="stylesheet" type="text/css" href="./CSS/myShifts.css">
+		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+		<div class="grid-container">
+			<div class="row">
+				<div class="col-12">
+					<div class="topnav">
+						<a href="myShifts.html"><i class="far fa-clock fa-3x fa-fw"></i></a>
+						<a href="timesheets.html"><i class="far fa-edit fa-3x fa-fw"></i></a>
+						<a href="availability.html"><i class="far fa-calendar-alt fa-3x fa-fw"></i></a>
+						<a href="accounts.html"><i class="far fa-user-circle fa-3x fa-fw"></i></a>
+						<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
+						<div class="sidenav">
+							<a class="closebtn">&times;</a>
+							<a href="myShifts.html"><i class="far fa-clock fa-lg fa-fw"></i>Shifts</a>
+							<a href="timesheets.html"><i class="far fa-edit fa-lg fa-fw"></i>Timesheets</a>
+							<a href="availability.html"><i class="far fa-calendar-alt fa-lg fa-fw"></i>Availability</a>
+							<a href="accounts.html"><i class="far fa-user-circle fa-lg fa-fw"></i>Accounts</a>
+						</div>				
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h3>My Shifts</h3>
+				</div>		
+			</div>
+			<div class="row" id="row-tableshifts">
+				<div class="col-12 dynamic-table">
+					<table id="shifts-table">
+						<thead>
+							<tr>
+								<th>Day</th>
+								<th>Date</th>
+								<th>Location</th>
+								<th>Start</th>
+								<th>Finish</th>
+								<th>Actions</th>
+							</tr>	
+						</thead>
+						<tbody>
+						</tbody>			
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="radio-container">
+					<div class="col-4">
+						<input type="radio" name="shift-date" id="radio-thisWeek" value="This Week" checked>
+						<label for="radio-thisWeek" id="label-thisWeek">This Week</label>
+					</div>
+					<div class="col-4">
+						<input type="radio" name="shift-date" id="radio-nextWeek" value="Next Week">
+						<label for="radio-nextWeek" id="label-nextWeek">Next Week</label>					
+					</div>
+					<div class="col-4">
+						<input type="radio" name="shift-date" id="radio-betweenDates" value="Between Dates">
+						<label for="radio-betweenDates" id="label-betweenDates">Between Dates</label>					
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<div class="datepickers">
+						<label for="dateFrom">From:</label>
+						<input type="date" id="dateFrom" value="">
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="datepickers">
+						<label for="dateTo">To:</label>
+						<input type="date" id="dateTo" value="">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<input type="button" id="button-submit" value="Search Shifts">
+				</div>
+			</div>
+		</div>
+		
+		<!--<input type="button" id="button-reset" value="Reset Table">-->
+		<script type="text/javascript" src="./JS/main.js"></script>
+		<script type="text/javascript" src="./JS/myShifts.js"></script>
+	</body>
+</html>

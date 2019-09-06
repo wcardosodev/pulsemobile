@@ -1,0 +1,95 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100vh;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	min-height: 100%;
+}
+/*
+.top-nav {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+.top-nav > a {
+	min-width: 25%;
+	color: white;
+	text-decoration: none;
+	float: left;
+	background-color: #2980b9;
+	display: inline-block;
+	padding: 25px 0px;
+	text-align: center;
+	transition-duration: 0.25s;
+}
+
+.top-nav > a:hover {
+	background-color: #f39c12;
+}
+*/
+
+.top-nav {
+	width: 100%;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #2980b9;
+	border-bottom: 1.5px solid black;
+}
+
+.top-nav > .item {
+	min-width: 25%;
+  float: left;
+  overflow: hidden;
+	display: inline-block;
+	text-align: center;
+}
+
+.top-nav > .item > .btn{
+  color: white;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: .25s;
+	padding: 25px 0px;
+}
+
+.top-nav > .item:hover, .top-nav > .item > .smenu > a:hover{
+  background-color: #f39c12;
+	color: white;
+}
+
+.top-nav .smenu {
+  min-width: 160px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.top-nav > .item > .smenu a {
+  text-decoration: none;
+  text-align: left;
+  float: none;
+  display: block;
+  padding: 12px 16px;
+	color: black;
+}
+
+.top-nav > .item:hover .smenu {
+  display: block;
+}

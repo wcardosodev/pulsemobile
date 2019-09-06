@@ -1,0 +1,9 @@
+#signatureparent {
+	border: 1px solid black;
+	background-color: lightslategrey;
+}
+
+#signature {
+	border-bottom: 1px solid black;
+	background-color: white;
+}
