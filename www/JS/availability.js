@@ -3,12 +3,12 @@ $(document).ready(function() {
 
 	loadCalendar(d);
 	
-	$('.month-header .prev').click(function() {
+	$('.month-header #month-prev').click(function() {
 		d = prevMonth(d);
 		loadCalendar(d);
 	});
 	
-	$('.month-header .next').click(function() {
+	$('.month-header #month-next').click(function() {
 		d = nextMonth(d);
 		loadCalendar(d);
 	});
@@ -16,7 +16,50 @@ $(document).ready(function() {
 	$('#reset-calendar').click(function () {
 		resetCalendarDate();
 	})
+	
+	$('.availability-calendar table tbody').on('click', 'td', function () {
+		var clickedBtnID = $(this).attr('id');
+		// if has an id value
+		if (typeof clickedBtnID !== 'undefined') {
+			getDateForOverlay($(this).text(), d.getMonth());
+			//TODO: need to load the availability currently set here based on the json response
+			//$('#overlay').css('right', '0');
+			//$('#overlay').css('left', '0');
+			$('#overlay').addClass('active');
+		}
+	})
+	
+	$('#selectall-available').click(function () {
+		setAllAvailabilityAs('available');
+	})
+	
+	$('#selectall-notsure').click(function () {
+		setAllAvailabilityAs('notsure');		
+	})
+	
+	$('#selectall-notavailable').click(function () {
+		setAllAvailabilityAs('notavailable');		
+	})
+	
+	$('#cancel').click(function () {
+		removeOverlay();
+	})
+	
+	$('#overlay-cancel').click(function () {
+		removeOverlay();
+	})
 });
+
+function setAllAvailabilityAs (status) {
+	$('#availability-early-'+status).prop('checked', true);
+	$('#availability-late-'+status).prop('checked', true);
+	$('#availability-day-'+status).prop('checked', true);
+	$('#availability-night-'+status).prop('checked', true);
+}
+
+function removeOverlay() {
+	$('#overlay').removeClass('active');
+}
 
 function daysInMonth (month, year) {
 	return new Date(year, month, 0, 0, 0, 0, 0).getDate();
@@ -24,6 +67,29 @@ function daysInMonth (month, year) {
 
 function startDay (month, year) {
 	return new Date(year, month - 1, 1, 0, 0, 0, 0).getDay();
+}
+
+function getDateForOverlay(day, month) {
+	// to find the day you need to get the column the number is in 0-6
+	var d = day,
+			m = intToMonth(month),
+			y = $('.month-header #yeartext').text();
+	$('#overlay-dateheader').html(m + ' ' + ordinalSuffix(d) + ', ' + y);
+}
+
+function ordinalSuffix(i) {
+	var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "st";
+    }
+    if (j == 2 && k != 12) {
+        return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return i + "rd";
+    }
+    return i + "th";
 }
 
 function prevMonth (date) {
@@ -40,11 +106,8 @@ function nextMonth (date) {
 	return new Date(year, month + 2, 0);	
 }
 
-function loadCalendarHeader (date) {
-	var monthText = $('.month-header #monthtext'),
-			yearText = $('.month-header #yeartext'),
-			month = new Array();
-	
+function intToMonth (val) {
+	month = new Array();
 	month[0] = 'January';
 	month[1] = 'February';
 	month[2] = 'March';
@@ -58,8 +121,15 @@ function loadCalendarHeader (date) {
 	month[10] = 'November';
 	month[11] = 'December';
 	
-	monthText.html(month[date.getMonth()]);
-	yearText.html(date.getFullYear());	
+	return month[val];
+}
+
+function loadCalendarHeader (date) {
+	var monthText = $('.month-header #monthtext'),
+			yearText = $('.month-header #yeartext');
+	
+	monthText.html(intToMonth(date.getMonth()));
+	yearText.html(date.getFullYear());
 }
 
 // TODO: AFTER LOAD CALENDAR (at the end of the function)
@@ -92,13 +162,16 @@ function loadCalendar (date) {
 		
 		//$cell.removeClass();
 		$cell.html(i);
+		$cell.attr('id', 'date-' + i);
 		//$cell.addClass('holiday');
 		cellValue++;
 	}
 }
 
 function resetCalendar() {
-	var table = $('.availability-calendar table tbody td').html('');
+	var table = $('.availability-calendar table tbody td');
+	table.html('');
+	table.removeAttr('id');
 }
 
 // button to go back to todays date

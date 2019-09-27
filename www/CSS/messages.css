@@ -1,0 +1,142 @@
+.grid-container {
+	display: grid;
+	/* Might have to change this based on the current page as each page will have different row values */
+	grid-template-rows: 7% 10% 76% 7%;
+/*	grid-template-rows: 100%;*/
+	height: 100%;
+}
+
+@media screen and (max-height: 600px) {
+	.grid-container {
+		grid-template-rows: 12.25% 17.75% 57.75% 12.25%;
+	}
+}
+
+@media screen and (max-height: 400px) {
+	.grid-container {
+		grid-template-rows: 21% 20% auto 21%;
+	}
+}
+
+.message-container {
+	display: block;
+	height: 100%;
+}
+
+.message-container::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+/*
+
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	box-shadow: 0px 2px 5px 0.25px grey;
+	z-index: 2;
+	position: relative;
+}
+*/
+
+.msg-page {
+	max-width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.messages {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow-y: scroll;
+}
+
+.msg {
+	padding: 10px 15px 10px 15px;
+	color: white;
+}
+
+.msg::after {
+	content: ' ';
+	display: block;
+	height: 0;
+	clear: both;	
+}
+
+.msg .received {
+	background-color: #00b894;
+}
+
+.msg .sent {
+	background-color: #0984e3;
+	float: right;
+}
+
+.msg > div:first-child {
+	padding: 10px;
+	border-radius: 5px;
+	width: 90%;
+}
+
+.msg .msg-body p {
+	padding: 0px;
+	margin: 0px;
+}
+
+.chats {
+	padding: 5px 25px 5px 20px;
+	width: 50%;
+	display: block;
+}
+
+.received-msg {
+	background-color: lightgray;	
+}
+
+.sent-msg {
+	background-color: lightblue;
+	right: 0px;
+}
+
+.footer {
+	display: flex;
+	border-top: 1px solid grey;
+	height: 100%;
+}
+
+.footer input[type=text] {
+	width: 85%;
+	min-height: 100%;
+	height: 100%;
+	border: none;
+	padding: 0px 0px 0px 15px;
+	font-size: 25px;
+}
+
+.footer input[type=text]:focus {
+	min-height: 100%;
+	height: 100%;
+	/* TODO: OUTLINE REMOVAL FROM MOST ELEMENTS ???? */
+	outline: none;
+}
+
+.footer textarea {
+	resize: none;
+	border: none;
+	width: 85%;
+	height: 100%;
+	font-size: 5vw;
+	padding: 15px 0px 0px 15px;
+	justify-content: center;
+}
+
+.footer button{
+	width: 15%;
+	min-height: 100%;
+	height: 100%;
+	border: none;
+	background-color: white;
+}

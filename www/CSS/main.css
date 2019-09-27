@@ -2,15 +2,24 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	cursor: default;
+	outline: none;
+}
+
+html, body {
+	overflow: hidden;
+	height: 100%;
 }
 
 body {
 	margin: 0px;
 	padding: 0px;
 	background-color: white;
+/*
 	min-height: 100%;
 	max-height: 100%;
 	height: 100vh;
+*/
 	font-family: "Lucida Sans", sans-serif;
 }
 
@@ -33,7 +42,7 @@ body {
 	/*padding: 15px;*/
 }
 
-.row:after {
+.grid-container > .row:after {
 	content: "";
 	clear: both;
 	display: table;
@@ -41,34 +50,23 @@ body {
 
 /* Using the new nav bar with icons instead of text */
 .topnav {
-	margin: 0px;
-	padding: 6px 0px;
-	box-shadow: 0px 1px 3px grey;
-	overflow: hidden;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	
+	background-color: #0984e3;
+	padding: 5px 0px;
 }
 
 .topnav > a, .topnav > i {
-	float: left;
-	min-width: 20%;
-	text-align: center;
+	color: white;
 }
-
-.topnav i {
-	background-color: white;
-	color: black;
-}
-/*
-
-.topnav #sidenav-icon {
-	float: right;
-}
-*/
 
 .topnav .sidenav {
 	height: 100%;
 	width: 0%;
 	position: fixed;
-	z-index: 1;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	background-color: black;
@@ -77,148 +75,59 @@ body {
 	transition: 0.5s;
 }
 
-.topnav .sidenav a {
-	padding: 8px 8px 8px 8px;
-	text-decoration: none;
-	font-size: 20px;
-	color: white;
-	display: block;
-	transition: 0.3s;
+.sidenav .flex-container {
+	display: flex;
+	align-content: flex-start;
+	padding: 0px;
+	margin: 0px;
 }
 
-.topnav .sidenav i {
-	background-color: black;
+.sidenav > a {
+	text-decoration: none;
+}
+
+.sidenav .flex-container .item {
 	color: white;
-	margin: 5%;
-	display: inline;
+	font-size: 1.2em;
+	padding: 5px 0px 5px 15px;
+}
+
+.sidenav .flex-container .item.img {
+	width: 20%;
+}
+
+.sidenav .flex-container .item.text {
+	width: 80%;
 }
 
 .topnav .sidenav .closebtn {
 	cursor: pointer;
 	position: absolute;
 	top: 0px;
-	right: 15px;
+	right: 10px;
 	font-size: 25px;
+	color: white;
+}
+
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	position: relative;
+	text-align: center;
+}
+
+.border-header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	box-shadow: 0px 2px 5px 0.25px grey;
+	z-index: 2;
+	position: relative;
 }
 
 h3 {
 	text-align: center;
 }
-
-
-
-/*
-	Using the old nav bar with text instead of icons
-
-.top-nav {
-	background-color: #2980b9;
-	overflow: hidden;
-	height: 7.5%;
-}
-
-.top-nav a {
-	float: left;
-	height: 100%;
-	padding: 20px 0px;
-	min-width: 25%;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	color: white;
-}
-
-.top-nav a:hover {
-	background-color: orange;
-}
-*/
-
-/*
-.top-nav li {
-	display: inline-block;
-	min-width: calc(100%/4);
-	height: 100%;
-}
-
-.top-nav li > a {
-	text-decoration: none;
-	color: white;
-	padding: 15px;
-	display: block;
-	height: 100%;
-}
-*/
-
-/*
-.top-nav > a {
-	min-width: 25%;
-	color: white;
-	text-decoration: none;
-	float: left;
-	background-color: #2980b9;
-	display: inline-block;
-	padding: 25px 0px;
-	text-align: center;
-	transition-duration: 0.25s;
-}
-
-.top-nav > a:hover {
-	background-color: #f39c12;
-}
-*/
-
-/*
-.top-nav {
-	width: 100%;
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-  background-color: #2980b9;
-	border-bottom: 1.5px solid black;
-	box-sizing: border-box;
-	height: 8vh;
-}
-
-.top-nav > .item {
-	min-width: 25%;
-  float: left;
-  overflow: hidden;
-	display: inline-block;
-	text-align: center;
-}
-
-.top-nav > .item > .btn{
-  color: white;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  transition-duration: .25s;
-	padding: 25px 0px;
-}
-
-.top-nav > .item:hover, .top-nav > .item > .smenu > a:hover{
-  background-color: #f39c12;
-	color: white;
-}
-
-.top-nav .smenu {
-  min-width: 160px;
-  display: none;
-  position: absolute;
-  z-index: 1;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  background-color: white;
-}
-
-.top-nav > .item > .smenu a {
-  text-decoration: none;
-  text-align: left;
-  float: none;
-  display: block;
-  padding: 12px 16px;
-	color: black;
-}
-
-.top-nav > .item:hover .smenu {
-  display: block;
-}*/

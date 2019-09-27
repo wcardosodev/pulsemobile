@@ -2,33 +2,118 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
 		<title>Blank App</title>
 		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
+		<link rel="stylesheet" type="text/css" href="./CSS/main.css">
 		<link rel="stylesheet" type="text/css" href="./CSS/timesheets.css">
 		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
   </head>
   <body>
-		<!-- Navigation / Tab bar -->		
-		<div class="top-nav">
-    	<div class="item">
-        <a class="btn">Shifts</a>
-				<div class="smenu">
-					<a href="./myShifts.html">My Shifts</a>
-					<a href="">Available Shifts</a>
+		<div class="grid-container">
+			<div class="row">
+				<div class="col-12">
+					<div class="topnav">
+						<a href="myShifts.html"><i class="far fa-clock fa-3x fa-fw"></i></a>
+						<a href="timesheets.html"><i class="far fa-edit fa-3x fa-fw"></i></a>
+						<a href="availability.html"><i class="far fa-calendar-alt fa-3x fa-fw"></i></a>
+						<a href="messages.html"><i class="far fa-comments fa-3x fa-fw"></i></a>
+						<a href="accounts.html"><i class="far fa-user-circle fa-3x fa-fw"></i></a>
+						<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
+						<div class="sidenav">
+							<a class="closebtn">&times;</a>
+							<a href="myShifts.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-clock fa-lg"></i></div>	
+										<div class="item text">Shifts</div>										
+								</div>
+							</a>
+							<a href="timesheets.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-edit fa-lg"></i></div>	
+										<div class="item text">Timesheets</div>										
+								</div>
+							</a>
+							<a href="availability.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-calendar-alt fa-lg"></i></div>	
+										<div class="item text">Availability</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-comments fa-lg"></i></div>	
+										<div class="item text">Messages</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-user-circle fa-lg"></i></div>	
+										<div class="item text">Account</div>										
+								</div>
+							</a>
+						</div>				
+					</div>
 				</div>
-      </div>
-      <div class="item">
-        <a class="btn" href="./timesheets.html">Timesheets</a>
-      </div>
-      <div class="item">
-        <a class="btn" href="./myAvailability.html">Availability</a>
-      </div>
-      <div class="item">
-        <a class="btn" href="./myAccounts.html">Accounts</a>
-      </div>
-    </div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="header">
+						<h3>Timesheets</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 dynamic-table">
+					<table id="timesheet-table">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Day</th>
+								<th>Date</th>
+								<th>Location</th>
+								<th>Start</th>
+								<th>Finish</th>
+								<th>Break</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<tr id="shift1">
+								<td><input type="checkbox" id="checkbox_shift1"></td>
+								<td class="shift_day">Fri</td>
+								<td class="shift_date">27/09</td>
+								<td class="shift_location">St Johns</td>
+								<td class="shift_start">08:30</td>
+								<td class="shift_end">12:30</td>
+								<td class="shift_break">30</td>
+							</tr>
+							<tr id="shift2">
+								<td><input type="checkbox" id="checkbox_shift2"></td>
+								<td class="shift_day">Sun</td>
+								<td class="shift_date">29/09</td>
+								<td class="shift_location">St Annes Hospital newport</td>
+								<td class="shift_start">08:30</td>
+								<td class="shift_end">22:30</td>
+								<td class="shift_break">60</td>
+							</tr>
+						</tbody>			
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div id="signatureparent">
+						<div id="signature">
+						</div>			
+						<input type="button" id="signature-confirm" value="Confirm">
+						<input type="button" id="signature-redoLastStroke" value="Re-do Last Stroke">
+						<input type="button" id="signature-reset" value="Reset">			
+					</div>
+				</div>
+			</div>
+		</div>
 		
+<!--
 		<div class="table">
 			<h3>Timesheet</h3>
 			<table id="timesheet-table">
@@ -49,7 +134,7 @@
 		
 		<input type="radio" name="shift-date" value="This Week" checked>This Week<br>
 		<input type="radio" name="shift-date" value="Next Week">Next Week<br>
-		<!-- If between dates is selected show the date pickers --> 
+		 If between dates is selected show the date pickers  
 		<input type="radio" name="shift-date" value="Between Dates">Between Dates<br>
 		<div class="datepickers">
 			<input type="date" id="date1">
@@ -58,7 +143,7 @@
 		<input type="button" onclick="fillShiftTable()" value="Submit">
 		<input type="button" onclick="clearShiftTable()" value="Reset Table">
 		
-		<!-- add squiggle -->
+		
 		<div id="signatureparent">
 			<div id="signature">
 			</div>			
@@ -66,8 +151,10 @@
 			<input type="button" id="signature-redoLastStroke" value="Re-do Last Stroke">
 			<input type="button" id="signature-reset" value="Reset">			
 		</div>
+-->
 		
 		<script type="text/javascript" src="./JS/jSignature/libs/jSignature.min.js"></script>
+		<script type="text/javascript" src="./JS/main.js"></script>
 		<script type="text/javascript" src="./JS/timesheets.js"></script>
 	</body>
 </html>

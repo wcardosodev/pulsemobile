@@ -16,5 +16,12 @@ $(document).ready(function() {
 		$('.sidenav').css('width', '0%');
 		$('.sidenav').toggleClass('open');
 	});
+	
+	// input focusing issue
+//	$('.text-input').focus(function () {
+//		var msgheight = $('.message-container').css('height'),
+//				footerheight = $('.footer').css('height');
+//		$('.msg-page').css('height', msgheight - footerheight);
+//	})
 
 });

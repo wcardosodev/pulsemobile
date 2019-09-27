@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+		<title>Blank App</title>
+		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
+		
+		<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+		<link rel="stylesheet" type="text/css" href="./CSS/messages.css">
+		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+<!--
+		<div class="topnav">
+			<a href="myShifts.html"><i class="far fa-clock fa-3x fa-fw"></i></a>
+			<a href="timesheets.html"><i class="far fa-edit fa-3x fa-fw"></i></a>
+			<a href="availability.html"><i class="far fa-calendar-alt fa-3x fa-fw"></i></a>
+			<a href="messages.html"><i class="far fa-comments fa-3x fa-fw"></i></a>
+			<a href="accounts.html"><i class="far fa-user-circle fa-3x fa-fw"></i></a>
+			<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
+			<div class="sidenav">
+				<a class="closebtn">&times;</a>
+				<a href="myShifts.html"><i class="far fa-clock fa-lg fa-fw"></i>Shifts</a>
+				<a href="timesheets.html"><i class="far fa-edit fa-lg fa-fw"></i>Timesheets</a>
+				<a href="availability.html"><i class="far fa-calendar-alt fa-lg fa-fw"></i>Availability</a>
+				<a href="accounts.html"><i class="far fa-user-circle fa-lg fa-fw"></i>Accounts</a>
+			</div>				
+		</div>
+-->
+		<div class="grid-container">
+			<div class="row">
+				<div class="col-12">
+					<div class="topnav">
+						<a href="myShifts.html"><i class="far fa-clock fa-3x fa-fw"></i></a>
+						<a href="timesheets.html"><i class="far fa-edit fa-3x fa-fw"></i></a>
+						<a href="availability.html"><i class="far fa-calendar-alt fa-3x fa-fw"></i></a>
+						<a href="messages.html"><i class="far fa-comments fa-3x fa-fw"></i></a>
+						<a href="accounts.html"><i class="far fa-user-circle fa-3x fa-fw"></i></a>
+						<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
+						<div class="sidenav">
+							<a class="closebtn">&times;</a>
+							<a href="myShifts.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-clock fa-lg"></i></div>	
+										<div class="item text">Shifts</div>										
+								</div>
+							</a>
+							<a href="timesheets.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-edit fa-lg"></i></div>	
+										<div class="item text">Timesheets</div>										
+								</div>
+							</a>
+							<a href="availability.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-calendar-alt fa-lg"></i></div>	
+										<div class="item text">Availability</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-comments fa-lg"></i></div>	
+										<div class="item text">Messages</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="far fa-user-circle fa-lg"></i></div>	
+										<div class="item text">Account</div>										
+								</div>
+							</a>
+<!--
+							<div class="flex-container">
+								<a href="myShifts.html">
+									<i class="far fa-clock fa-lg fa-fw"></i>
+									<span>Shifts</span>
+								</a>
+							</div>
+-->
+							
+<!--
+							<a href="timesheets.html"><i class="far fa-edit fa-lg fa-fw"></i>Timesheets</a>
+							<a href="availability.html"><i class="far fa-calendar-alt fa-lg fa-fw"></i>Availability</a>
+							<a href="messages.html"><i class="far fa-comments fa-lg fa-fw"></i>Messages</a>
+							<a href="accounts.html"><i class="far fa-user-circle fa-lg fa-fw"></i>Account</a>
+-->
+						</div>				
+					</div>
+				</div>
+			</div>
+<!--
+			<div class="row">
+				<div class="col-12">
+					<h3>Messages</h3>
+				</div>
+			</div>
+-->
+			<div class="row">
+				<div class="col-12">
+					<div class="border-header">
+						<h3>Alfa Personnel</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="msg-page">
+						<div class="messages" id="msg-list">
+							<div class="msg">
+								<div class="received">
+									<div class="msg-header">
+										<span class="time">13:24 | September 12</span>
+									</div>
+									<div class="msg-body">
+										<p>Would you be available for a 20:00 - 07:30 night shift tomorrow at the gwent newport? - Chris</p>					
+									</div>					
+								</div>
+							</div>
+							<div class="msg">
+								<div class="sent">
+									<div class="msg-header">
+										<span class="time">13:29 | September 12</span>
+									</div>
+									<div class="msg-body">
+										<p>No I'm working somewhere else already</p>					
+									</div>					
+								</div>
+							</div>
+							<div class="msg">
+								<div class="received">
+									<div class="msg-header">
+										<span class="time">14:12 | September 12</span>
+									</div>
+									<div class="msg-body">
+										<p>Okay no problem</p>					
+									</div>					
+								</div>
+							</div>
+							<div class="msg">
+								<div class="received">
+									<div class="msg-header">
+										<span class="time">16:39 | September 14</span>
+									</div>
+									<div class="msg-body">
+										<p>Would you be available for a 08:00 - 20:00 day shift tomorrow at the gwent newport? - Chris</p>					
+									</div>					
+								</div>
+							</div>
+							<div class="msg">
+								<div class="received">
+									<div class="msg-header">
+										<span class="time">13:24 | September 12</span>
+									</div>
+									<div class="msg-body">
+										<p>Would you be available for a 20:00 - 07:30 night shift tomorrow at the gwent newport? - Chris</p>					
+									</div>					
+								</div>
+							</div>
+							<div class="msg">
+								<div class="sent">
+									<div class="msg-header">
+										<span class="time">13:29 | September 12</span>
+									</div>
+									<div class="msg-body">
+										<p>No I'm working somewhere else already</p>					
+									</div>					
+								</div>
+							</div>
+							<div class="msg">
+								<div class="received">
+									<div class="msg-header">
+										<span class="time">14:12 | September 12</span>
+									</div>
+									<div class="msg-body">
+										<p>Okay no problem</p>					
+									</div>					
+								</div>
+							</div>
+							<div class="msg">
+								<div class="received">
+									<div class="msg-header">
+										<span class="time">16:39 | September 14</span>
+									</div>
+									<div class="msg-body">
+										<p>Would you be available for a 08:00 - 20:00 day shift tomorrow at the gwent newport? - Chris</p>					
+									</div>					
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="footer">
+						<textarea id="txtmsg-body" rows="3" placeholder="Enter message here.."></textarea>
+						<button id="msg-send">
+							<i class="fas fa-paper-plane fa-2x fa-fw"></i>
+						</button>	
+					</div>
+				</div>
+			</div>
+			
+<!--
+			<div class="row">
+				<div class="col-12">
+					<div class="message-container">
+						<div class="header">
+							<h3>Alfa Personnel </h3>
+						</div>
+						<div class="msg-page">
+							<div class="messages" id="msg-list">
+								<div class="msg">
+									<div class="received">
+										<div class="msg-header">
+											<span class="time">13:24 | September 12</span>
+										</div>
+										<div class="msg-body">
+											<p>Would you be available for a 20:00 - 07:30 night shift tomorrow at the gwent newport? - Chris</p>					
+										</div>					
+									</div>
+								</div>
+								<div class="msg">
+									<div class="sent">
+										<div class="msg-header">
+											<span class="time">15:12 | September 12</span>
+										</div>
+										<div class="msg-body">
+											<p>Yes I would be available for a 20:00 - 07:30 night shift tomorrow at the gwent newport. Will</p>				
+										</div>					
+									</div>
+								</div>
+								<div class="msg">
+									<div class="sent">
+										<div class="msg-header">
+											<span class="time">09:45 | September 14</span>
+										</div>
+										<div class="msg-body">
+											<p>Is there any shifts going at the cwmbran club</p>											
+										</div>					
+									</div>
+								</div>
+								<div class="msg">
+									<div class="received">
+										<div class="msg-header">
+											<span class="time">16:32 | September 14</span>
+										</div>
+										<div class="msg-body">
+											<p>Nah bro</p>											
+										</div>					
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer">
+							<textarea id="txtmsg-body" rows="1" placeholder="Enter message here.."></textarea>
+							<button id="msg-send">
+								<i class="fas fa-paper-plane fa-2x fa-fw"></i>
+							</button>									
+						</div>						
+					</div>
+				</div>
+			</div>
+-->
+		</div>
+		<script type="text/javascript" src="./JS/main.js"></script>
+		<script type="text/javascript" src="./JS/messages.js"></script>
+	</body>
+</html>
