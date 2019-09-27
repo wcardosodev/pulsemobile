@@ -1,7 +1,7 @@
 .grid-container {
 	display: grid;
 	/* Might have to change this based on the current page as each page will have different row values */
-	grid-template-rows: 7% 10% 60% 23%;
+	grid-template-rows: 7% 10% 60% 15%;
 	/*	grid-template-rows: 100%;*/
 	height: 100%;
 }
@@ -46,6 +46,10 @@ td {
 	border-bottom: 1px solid black;
 }
 
+tbody tr td {
+	padding: 5px 0px;
+}
+
 tbody tr:nth-child(odd) {
 	/* TODO change this color*/
 	background-color: white;
@@ -56,11 +60,11 @@ tbody tr:nth-child(even) {
 }
 
 #signatureparent {
-	border: 1px solid black;
 	background-color: lightslategrey;
 }
 
 #signature {
-	border-bottom: 1px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
 	background-color: white;
 }

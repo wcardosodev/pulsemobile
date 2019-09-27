@@ -55,7 +55,7 @@ function loadShiftsIntoTable() {
 		if (this.readyState == 4 && this.status == 200) {
 			var objArr = JSON.parse(this.responseText);
 //			for (i = 0; i < objArr.rtnLiveStaff.length; i++) {
-			for (i = 0; i < 5; i++) {
+			for (i = 0; i < objArr.rtnLiveStaff.length; i++) {
 				var row = table.insertRow(i),
 						cell_checkbox = row.insertCell(0),
 						cell_day = row.insertCell(1),
@@ -70,22 +70,22 @@ function loadShiftsIntoTable() {
 				cell_checkbox.innerHTML = '<input type="checkbox" id="checkbox_' + row.id + '">';
 				
 				cell_day.className = 'shift_day';
-				cell_day.innerHTML = 'Day';
+				cell_day.innerHTML = 'Fri';
 				
 				cell_date.className = 'shift_date';
-				cell_date.innerHTML = 'Date';
+				cell_date.innerHTML = '27/09';
 				
 				cell_location.className = 'shift_location';
 				cell_location.innerHTML = 'Location';
 				
 				cell_start.className = 'shift_start';
-				cell_start.innerHTML = 'Start';
+				cell_start.innerHTML = '08:00';
 				
 				cell_end.className = 'shift_end';
-				cell_end.innerHTML = 'End';
+				cell_end.innerHTML = '20:00';
 				
 				cell_break.className = 'shift_break';
-				cell_break.innerHTML = 'Break';
+				cell_break.innerHTML = '60';
 			}
 		}
 	};
