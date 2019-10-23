@@ -1,5 +1,65 @@
-function tryLogin() {
-	doLogin();
+$(document).ready(function () {
+	
+	$('#form-login').submit(function(event) {
+		event.preventDefault();
+		DoLogin();
+		//TryLogin();
+	});
+	
+	$('#forgot-password').click(function(event) {
+		event.preventDefault();
+		alert('You forgot your password!!!!!');	
+	});
+})
+
+
+
+//// Add to index.js or the first page that loads with your app.
+//// For Intel XDK and please add this to your app.js.
+//
+document.addEventListener('deviceready', function () {
+  // Enable to debug issues.
+  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+  
+  var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit("51789cd3-0a5e-4ca2-a5fc-b582888a7275")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit();
+}, false);
+
+function TryLogin() {
+	//DoLogin();
+	
+	var username = $('#user-username').val(),
+			password = $('#user-password').val(),
+			pin = $('#user-pin').val(),
+			account_details = {firstName: "", lastName: "", email: "", company: ""};
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		// check url below for info on xmlhttprequest properties and methods
+		// https://www.w3schools.com/js/js_ajax_http.asp
+		// 4 means request is finished and response is ready
+		// 200 means success
+		if (this.readyState == 4 && this.status == 200) {
+			// if request comes back successful
+			
+			// get the object information and put it into the account details
+			
+		} else {
+			// if request fails
+			
+			// overlay to say username and password incorrect or something
+		}
+	};
+	xhttp.open('');
+	xhttp.send();
+	
+	// send this information to the server via ajax
 	
 //	var MessageResult = "";
 //	var username = document.getElementById("input-username").value;
@@ -30,8 +90,8 @@ function tryLogin() {
 //	}
 }
 
-function doLogin() {
-	var accountDetails = {firstName: "", lastName: "", email: "", company: ""}
+function DoLogin() {
+	var accountDetails = {firstName: "", lastName: "", email: "", company: ""};
 	// here check whether success or fail based on http request
 	// make http request
 	//alert("Logging in...")
@@ -41,5 +101,6 @@ function doLogin() {
 	
 	//if success move to the next screen
 	//document.location.href = "http://172.16.0.18:3000/myAccounts.html";
-	document.location.href = "./accounts.html";
+//	document.location.href = "./myShifts.html";
+	document.location.href = "./myShifts.html";
 }

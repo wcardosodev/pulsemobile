@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+
+.navigation-bar {
+	width: 100vw;
+	height: 10vh;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	align-items: center;
+	
+	padding: 0px;
+	margin: 0px;
+	
+	background-color: blue;
+}
+
+.navigation-bar a, .navigation-bar i {
+	color: white;
+}
+
+.navigation-bar .sidenav {
+	display: none;
+}
+
+.content {
+	height: 50%;
+}
+
+.dynamic-table {
+	height: 100%;
+	overflow: auto;
+}

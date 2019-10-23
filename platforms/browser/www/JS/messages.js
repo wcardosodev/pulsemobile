@@ -1,4 +1,10 @@
 $(document).ready(function () {
+	var bodyheight = $('body').height(),
+			navheight = $('.topnav').height(),
+			contentheight = $('.main-content').height(),
+			headerheight = $('.main-header').height(),
+			footerheight = $('.main-footer').height();
+	
 	scrollToBottom();
 	
 	$('#msg-send').click(function () {
@@ -6,11 +12,27 @@ $(document).ready(function () {
 			// Send message
 			sendMessage();
 		}
-	})	
+	});
+	
+	$(window).resize(function () {
+		// if fullsize
+		if ($('body').height() == bodyheight) {
+			$('.topnav').height(navheight);
+			$('.main-header').height(headerheight);
+			$('.main-footer').height(footerheight);
+			$('.main-content').height(contentheight);
+		} 
+		else {
+			$('.topnav').height(navheight);
+			$('.main-header').height(headerheight);
+			$('.main-footer').height(footerheight);
+			$('.main-content').height($('body').height() - (navheight + headerheight + footerheight));
+		}
+	});	
 })
 
 function sendMessage() {
-	var message_list = $('#msg-list'),
+	var message_list = $('#chat-page'),
 					d = new Date(),
 					now_hour = d.getHours(),
 					now_minute = d.getMinutes(),
@@ -22,11 +44,14 @@ function sendMessage() {
 				now_minute = '0'+now_minute;
 			}
 			
+	
 			// add msg to the list
-			message_list.append('<div class="msg"><div class="sent"><div class="msg-header"><span class="time">' + now_hour + ':' + now_minute + ' | ' + months[d.getMonth()] + ' ' + d.getDay() + '</span></div><div class="msg-body"><p>' + message + '</p></div></div></div>');
+			message_list.append('<div class="msg"><div class="sent"><div class="header"><span class="time">' + now_hour + ':' + now_minute + ' | ' + months[d.getMonth()] + ' ' + d.getDate() + '</span></div><div class="body"><p>' + message + '</p></div></div></div>');
 			
-			// remove 
+			// remove the text message from the input
 			$('#txtmsg-body').val('');
+	
+			// TODO: WHEN SENDING YOU NEED TO CHECK FOR A SUCCESS MESSAGE JUST LIKE WHEN LOGGING IN
 
 			// scroll to bottom
 			scrollToBottom();
@@ -37,7 +62,7 @@ function loadMessages() {
 }
 
 function scrollToBottom() {
-	$('.messages').scrollTop( $('.messages').prop('scrollHeight'));
+	$('#chat-page').scrollTop( $('#chat-page').prop('scrollHeight'));
 }
 
 function oldFocusFixMayNeedLater() {

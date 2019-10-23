@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+		<title>Blank App</title>
+		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
+		<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+		<link rel="stylesheet" type="text/css" href="./CSS/timesheets.css">
+		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+		<div class="grid-container">
+			<div class="row" id="row-nav_bar">
+				<div class="col-12">
+					<div class="topnav">
+						<a href="myShifts.html"><i class="fas fa-clock fa-3x fa-fw"></i></a>
+						<a href="timesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>
+						<a href="availability.html"><i class="fas fa-calendar-alt fa-3x fa-fw"></i></a>
+						<a href="messages.html"><i class="fas fa-comments fa-3x fa-fw"></i></a>
+						<a href="accounts.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
+						<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
+						<div class="sidenav">
+							<a class="closebtn">&times;</a>
+							<a href="myShifts.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-clock fa-lg"></i></div>	
+										<div class="item text">Shifts</div>										
+								</div>
+							</a>
+							<a href="timesheets.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-edit fa-lg"></i></div>	
+										<div class="item text">Timesheets</div>										
+								</div>
+							</a>
+							<a href="availability.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-calendar-alt fa-lg"></i></div>	
+										<div class="item text">Availability</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-comments fa-lg"></i></div>	
+										<div class="item text">Messages</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-cog fa-lg"></i></div>	
+										<div class="item text">Settings</div>										
+								</div>
+							</a>
+						</div>				
+					</div>
+				</div>
+			</div>
+			<div class="row" id="row-header">
+				<div class="col-12">
+					<div class="header">
+						<h3>Timesheets</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="row-table">
+				<div class="col-12 dynamic-table">
+					<table id="timesheet-table">
+						<thead>
+							<tr>
+								<th class="table-actions">Actions</th>
+<!--								<th>Actions</th>-->
+								<th>Day</th>
+								<th>Date</th>
+								<th>Location</th>
+								<th>Start</th>
+								<th>Finish</th>
+								<th class="table-break">Break</th>
+							</tr>	
+						</thead>
+						<tbody>
+						</tbody>			
+					</table>
+				</div>
+			</div>
+			<div class="row" id="row-signature">
+				<div class="col-12">
+					<div class="signature-parent">
+						<div class="signature-header">Enter Authorized Signature below..</div>
+						<div id="signature"></div>
+						<img id="signature-img">
+					</div>
+				</div>
+			</div>
+			<div class="row" id="row-footer">
+				<div class="col-12">
+					<div class="footer">
+						<input type="button" id="signature-confirm" value="Confirm Shifts">
+						<input type="button" id="signature-reset" value="Reset Signature">		
+					</div>
+				</div>
+			</div>
+		</div>		
+		<script type="text/javascript" src="./JS/jSignature/libs/jSignature.min.js"></script>
+		<script type="text/javascript" src="./JS/main.js"></script>
+		<script type="text/javascript" src="./JS/timesheets.js"></script>
+	</body>
+</html>

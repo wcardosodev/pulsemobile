@@ -1,18 +1,88 @@
+* {
+	box-sizing: border-box;
+	font-size: 1em;
+	font-family: sans-serif;
+	cursor: default;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
 body {
-	background-color: white;
+	background-color: #2E8DDF;
+/*	background-color: #2267A3;*/
+/*	height: 100%;*/
+	margin: 0px;
+	padding: 0px;
 }
 
-div.container {
-	
-}
-
-.input-text {
-	max-width: 100px;
+.container {
+	height: 100vh;
+	width: 70vw;
 	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
 }
 
-.button1 {
-	height: 50px;
-	max-width: 500px;
-	margin: auto;
+.container .header {
+	width: 100%;
+	text-align: center;
+}
+
+.container .body {
+	width: 100%;
+}
+
+.border {
+	border-bottom: 1px solid white;
+}
+
+.flex-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.flex-container i {
+	padding: 10px 12px;
+	color: white;
+}
+
+.flex-container input {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	background: none;
+	color: white;
+}
+
+.flex-container input::placeholder {
+	color: white;
+}
+
+.flex-container a {
+	width: 100%;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+}
+
+.flex-container a:visited {
+	color: white;
+}
+
+form input[type=submit] {
+	width: 100%;
+	height: 40px;
+	margin: 25px 0px;
+	border-radius: 5px;
+	border: none;
+	background-color: #2267A3;
+/*	background-color: #2E8DDF;*/
+	color: white;
+	text-transform: uppercase;
 }

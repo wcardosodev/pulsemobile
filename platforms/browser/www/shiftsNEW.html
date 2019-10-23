@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+		<title>Blank App</title>
+		<link rel="stylesheet" type="text/css" href="CSS/all.css">
+		<link rel="stylesheet" type="text/css" href="CSS/navigation-bar.css">
+		<link rel="stylesheet" type="text/css" href="CSS/shiftsNEW.css">
+		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
+<!--
+		<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+		<script>
+  		var OneSignal = window.OneSignal || [];
+  		OneSignal.push(function() {
+    	OneSignal.init({
+      	appId: "51789cd3-0a5e-4ca2-a5fc-b582888a7275",
+    	});
+  	});
+		</script>
+-->
+  </head>
+  <body>
+		<div class="topnav">
+			<a href="myShifts.html"><i class="fas fa-clock fa-3x fa-fw"></i></a>
+			<a href="timesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>
+			<a href="availability.html"><i class="fas fa-calendar-alt fa-3x fa-fw"></i></a>
+			<a href="messages.html"><i class="fas fa-comments fa-3x fa-fw"></i></a>
+			<a href="accounts.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
+			<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
+			<div class="sidenav">
+				<a class="closebtn">&times;</a>
+				<a href="myShifts.html">
+					<div class="flex-container">
+							<div class="item img"><i class="fas fa-clock fa-lg"></i></div>	
+							<div class="item text">Shifts</div>
+					</div>
+				</a>
+				<a href="timesheets.html">
+					<div class="flex-container">
+							<div class="item img"><i class="fas fa-edit fa-lg"></i></div>	
+							<div class="item text">Timesheets</div>
+					</div>
+				</a>
+				<a href="availability.html">
+					<div class="flex-container">
+							<div class="item img"><i class="fas fa-calendar-alt fa-lg"></i></div>	
+							<div class="item text">Availability</div>
+					</div>
+				</a>
+				<a href="messages.html">
+					<div class="flex-container">
+							<div class="item img"><i class="fas fa-comments fa-lg"></i></div>	
+							<div class="item text">Messages</div>		
+					</div>
+				</a>
+				<a href="messages.html">
+					<div class="flex-container">
+							<div class="item img"><i class="fas fa-cog fa-lg"></i></div>	
+							<div class="item text">Settings</div>		
+					</div>
+				</a>
+			</div>				
+		</div>
+		<div class="main-header">
+			<h3>My Shifts</h3>
+		</div>
+		<div class="main-content">
+			<table id="shifts-table">
+				<thead>
+					<tr>
+						<th>Day</th>
+						<th>Date</th>
+						<th>Location</th>
+						<th>Start</th>
+						<th>Finish</th>
+						<th>Actions</th>
+					</tr>	
+				</thead>
+				<tbody>
+				</tbody>			
+			</table>	
+		</div>
+		<div class="main-footer">	
+		</div>
+		<script type="text/javascript" src="JS/navigation-bar.js"></script>
+		<script type="text/javascript" src="JS/myShifts.js"></script>
+	</body>
+</html>

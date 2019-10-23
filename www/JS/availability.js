@@ -1,27 +1,27 @@
 $(document).ready(function() {
 	var d = new Date();
 
-	loadCalendar(d);
+	LoadCalendar(d);
 	
 	$('.month-header #month-prev').click(function() {
-		d = prevMonth(d);
-		loadCalendar(d);
+		d = PrevMonth(d);
+		LoadCalendar(d);
 	});
 	
 	$('.month-header #month-next').click(function() {
-		d = nextMonth(d);
-		loadCalendar(d);
+		d = NextMonth(d);
+		LoadCalendar(d);
 	});
 	
 	$('#reset-calendar').click(function () {
-		resetCalendarDate();
+		ResetCalendarDate();
 	})
 	
 	$('.availability-calendar table tbody').on('click', 'td', function () {
 		var clickedBtnID = $(this).attr('id');
 		// if has an id value
 		if (typeof clickedBtnID !== 'undefined') {
-			getDateForOverlay($(this).text(), d.getMonth());
+			GetDateForOverlay($(this).text(), d.getMonth());
 			//TODO: need to load the availability currently set here based on the json response
 			//$('#overlay').css('right', '0');
 			//$('#overlay').css('left', '0');
@@ -30,54 +30,69 @@ $(document).ready(function() {
 	})
 	
 	$('#selectall-available').click(function () {
-		setAllAvailabilityAs('available');
+		SetAllAvailabilityAs('available');
 	})
 	
 	$('#selectall-notsure').click(function () {
-		setAllAvailabilityAs('notsure');		
+		SetAllAvailabilityAs('notsure');		
 	})
 	
 	$('#selectall-notavailable').click(function () {
-		setAllAvailabilityAs('notavailable');		
+		SetAllAvailabilityAs('notavailable');		
+	})
+	
+//	$('#submit-availability').click(function () {
+//		removeOverlay();
+//	})
+	$('#availability-form').submit(function (e){
+		e.preventDefault();
+		//send stuff via ajax?
+		//https://stackoverflow.com/questions/25983603/how-to-submit-html-form-without-redirection/30666118
+		
+		RemoveOverlay();
 	})
 	
 	$('#cancel').click(function () {
-		removeOverlay();
+		RemoveOverlay();
 	})
 	
 	$('#overlay-cancel').click(function () {
-		removeOverlay();
+		RemoveOverlay();
 	})
 });
 
-function setAllAvailabilityAs (status) {
+function SetAllAvailabilityAs (status) {
 	$('#availability-early-'+status).prop('checked', true);
 	$('#availability-late-'+status).prop('checked', true);
 	$('#availability-day-'+status).prop('checked', true);
 	$('#availability-night-'+status).prop('checked', true);
 }
 
-function removeOverlay() {
+function RemoveOverlay() {
 	$('#overlay').removeClass('active');
+	
+	// untick radio buttons afterwards, when loading the availability information you will tick the buttons based on the database
+	
+	// nvm dont have to as it will change when they loaded anyway
 }
 
-function daysInMonth (month, year) {
+function DaysInMonth (month, year) {
 	return new Date(year, month, 0, 0, 0, 0, 0).getDate();
 }
 
-function startDay (month, year) {
+function StartDay (month, year) {
 	return new Date(year, month - 1, 1, 0, 0, 0, 0).getDay();
 }
 
-function getDateForOverlay(day, month) {
+function GetDateForOverlay(day, month) {
 	// to find the day you need to get the column the number is in 0-6
 	var d = day,
-			m = intToMonth(month),
+			m = IntToMonth(month),
 			y = $('.month-header #yeartext').text();
-	$('#overlay-dateheader').html(m + ' ' + ordinalSuffix(d) + ', ' + y);
+	$('#overlay-dateheader').html(m + ' ' + OrdinalSuffix(d) + ', ' + y);
 }
 
-function ordinalSuffix(i) {
+function OrdinalSuffix(i) {
 	var j = i % 10,
         k = i % 100;
     if (j == 1 && k != 11) {
@@ -92,21 +107,21 @@ function ordinalSuffix(i) {
     return i + "th";
 }
 
-function prevMonth (date) {
+function PrevMonth (date) {
 	var month = date.getMonth(),
 			year = date.getFullYear();
 	
 	return new Date(year, month, 0);
 }
 
-function nextMonth (date) {
+function NextMonth (date) {
 	var month = date.getMonth(),
 			year = date.getFullYear();
 	
 	return new Date(year, month + 2, 0);	
 }
 
-function intToMonth (val) {
+function IntToMonth (val) {
 	month = new Array();
 	month[0] = 'January';
 	month[1] = 'February';
@@ -124,24 +139,24 @@ function intToMonth (val) {
 	return month[val];
 }
 
-function loadCalendarHeader (date) {
+function LoadCalendarHeader (date) {
 	var monthText = $('.month-header #monthtext'),
 			yearText = $('.month-header #yeartext');
 	
-	monthText.html(intToMonth(date.getMonth()));
+	monthText.html(IntToMonth(date.getMonth()));
 	yearText.html(date.getFullYear());
 }
 
 // TODO: AFTER LOAD CALENDAR (at the end of the function)
 // TODO: SET ALL UNUSED DATES (blank dates) color to black?
 
-function loadCalendar (date) {
-	loadCalendarHeader(date);
+function LoadCalendar (date) {
+	LoadCalendarHeader(date);
 	
-	resetCalendar();
+	ResetCalendar();
 	
-	var	startd = startDay(date.getMonth() + 1, date.getFullYear()),
-			days = daysInMonth(date.getMonth() + 1, date.getFullYear()),
+	var	startd = StartDay(date.getMonth() + 1, date.getFullYear()),
+			days = DaysInMonth(date.getMonth() + 1, date.getFullYear()),
 			table = $('.availability-calendar table tbody')[0],
 			rowValue = 0,
 			cellValue = startd - 1,
@@ -166,17 +181,22 @@ function loadCalendar (date) {
 		//$cell.addClass('holiday');
 		cellValue++;
 	}
+	
+	if ($('.availability-table tbody td:not([id])')) {
+		$('.availability-table tbody td:not([id])').addClass('blank');
+	}
 }
 
-function resetCalendar() {
+function ResetCalendar() {
 	var table = $('.availability-calendar table tbody td');
 	table.html('');
 	table.removeAttr('id');
+	table.removeAttr('class');
 }
 
 // button to go back to todays date
 // incase they go too far
-function resetCalendarDate() {
+function ResetCalendarDate() {
 	var d = new Date();
-	loadCalendar (date);
+	LoadCalendar (date);
 }

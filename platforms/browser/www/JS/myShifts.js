@@ -6,11 +6,14 @@ $(document).ready(function() {
 	fillShiftTable();
 	
 	$('#dateFrom').prop('value', '2019-08-07');
-	$('#dateTo').prop('value', '2019-08-07');	
+	$('#dateTo').prop('value', '2019-08-07');
 	
-	$('#shifts-table tbody').on('click', 'tr', function() {
-		// do something based on them clicking depends what I wanna do
-		alert('row2');	
+	$('#shifts-table').on('click', '.arrived', function() {
+		GetGeoLocation();		
+	});
+	
+	$('#shifts-table').on('click', '.left', function() {
+		GetGeoLocation();
 	});
 	
 	$('input:radio[name="shift-date"]').change(function(){	
@@ -19,18 +22,17 @@ $(document).ready(function() {
 			} else {
 				$('.datepickers').hide();
 			}
-		}
-	);
+		});
 	
 	$('#button-submit').click(function(event) {
 		event.preventDefault();
 		fillShiftTable();
 	});
 	
-//	$('#button-reset').click(function(event) {
-//		event.preventDefault();
-//		clearShiftTable();
-//	})
+	$('#button-reset').click(function(event) {
+		event.preventDefault();
+		clearShiftTable();
+	})
 });
 
 function fillShiftTable() {
@@ -67,20 +69,21 @@ function fillShiftTable() {
 				for (i = 0; i < objArr.rtnLiveStaff.length; i++){
 
 					var row = table.insertRow(i);
-					var cell1 = row.insertCell(0);
-					var cell2 = row.insertCell(1);
-					var cell3 = row.insertCell(2);
-					var cell4 = row.insertCell(3);
-					var cell5 = row.insertCell(4);
-					var cell6 = row.insertCell(5);
+					var cell_day = row.insertCell(0);
+					var cell_date = row.insertCell(1);
+					var cell_location = row.insertCell(2);
+					var cell_start = row.insertCell(3);
+					var cell_end = row.insertCell(4);
+					var cell_Actions = row.insertCell(5);
 
 					// replace these with the values from the json response
-					cell1.innerHTML = objArr.rtnLiveStaff[i].NurseNo;
-					cell2.innerHTML = '20-03-2019';//objArr.rtnLiveStaff[i].Firstname;
-					cell3.innerHTML = objArr.rtnLiveStaff[i].Surname;
-					cell4.innerHTML = '07:00';
-					cell5.innerHTML = '14:00';
-					cell6.innerHTML = '<a href="">Arrived</a> <a href="">Left</a>';
+					cell_day.innerHTML = objArr.rtnLiveStaff[i].NurseNo;
+					cell_date.innerHTML = '20-03-2019';//objArr.rtnLiveStaff[i].Firstname;
+					cell_location.innerHTML = objArr.rtnLiveStaff[i].Surname;
+					cell_start.innerHTML = '07:00';
+					cell_end.innerHTML = '14:00';
+					cell_Actions.innerHTML = '<input type="button" class="arrived" id="arrived_shift' + (i + 1) + '" value="Arrived"><input type="button" class="left" id="left_shift' + (i + 1) + '" value="Left">';
+//						'<a href="" class="arrived" id="arrived_shift' + (i + 1) + '">Arrived</a> <a href="" class="left" id="left_shift' + (i + 1) +'">Left</a>';
 				}
 			}
 		};
@@ -112,3 +115,57 @@ function getSunday(d) {
 	var diff = d.getDate() + 7 - day;
 	return new Date(d.setDate(diff));
 }
+
+function GetGeoLocation() {
+	navigator.geolocation.getCurrentPosition(OnGeoSuccess, OnGeoError);
+}
+
+function OnGeoSuccess(pos, arrivalStatus) {
+	// if successfull you want to send the information to db or wherever
+	var now = new Date(),
+			hour = now.getHours(),
+			minute = now.getMinutes(),
+			seconds = now.getSeconds(),
+			current_time = hour + ':' + minute + ':' + seconds,
+			latitude = pos.coords.latitude,
+			longitude = pos.coords.longitude;
+	//alert('arrivalStatus');
+	
+//	var location_info = {
+//		shift_id: 1,
+//		arrival_info: {
+//			time: '08:00',
+//			latitude: '',
+//			longitude: '';
+//		},
+//		leaving_info: {
+//			time: '20:00',
+//			latitude: '',
+//			longitude: '';
+//		};		
+//	}
+	
+	// send ^^
+	alert('Latitude: ' + pos.coords.latitude + 'Longitude: ' + pos.coords.longitude);
+}
+
+function OnGeoError(error) {
+	switch(error.code) {
+		case error.PERMISSION_DENIED:
+			alert('Permission to use geolocation is denied, please allow geolocation for this feature.');
+			break;
+		case error.POSITION_UNAVAILABLE:
+			alert('Position is currently unavailable.');
+			break;
+		case error.TIMEOUT:
+			alert('The request timed out.');
+			break;
+		case error.UNKNOWN_ERROR:
+			alert('An unknown error occurred.');
+			break;		
+	}
+}
+
+//function ShowPosition(pos) {
+//	
+//}

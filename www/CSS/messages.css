@@ -1,57 +1,47 @@
-.grid-container {
-	display: grid;
-	/* Might have to change this based on the current page as each page will have different row values */
-	grid-template-rows: 7% 10% 76% 7%;
-/*	grid-template-rows: 100%;*/
-	height: 100%;
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: default;
+	outline: none;	
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	font-family: "Lucida Sans", sans-serif;
 }
 
-@media screen and (max-height: 600px) {
-	.grid-container {
-		grid-template-rows: 12.25% 17.75% 57.75% 12.25%;
-	}
+body {
+	height: 100vh;
+	width: 100vw;
+	
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
 }
 
-@media screen and (max-height: 400px) {
-	.grid-container {
-		grid-template-rows: 21% 20% auto 21%;
-	}
-}
-
-.message-container {
-	display: block;
-	height: 100%;
-}
-
-.message-container::after {
-	content: '';
-	clear: both;
-	display: table;
-}
-/*
-
-.header {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 100%;
-	box-shadow: 0px 2px 5px 0.25px grey;
+.main-header {
+	height: 8%;
+	margin: 0px;
+	padding: 0px;
+	
 	z-index: 2;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	box-shadow: 0px 2px 5px 0.25px grey;
+	background-color: white;
 }
-*/
 
-.msg-page {
-	max-width: 100%;
-	height: 100%;
-	z-index: 1;
+.main-content {
+	height: 76%;
+	background-color: white;
 }
 
-.messages {
+.chat-page {
 	width: 100%;
 	height: 100%;
-	z-index: 1;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .msg {
@@ -66,77 +56,59 @@
 	clear: both;	
 }
 
-.msg .received {
-	background-color: #00b894;
-}
-
 .msg .sent {
-	background-color: #0984e3;
+	background-color: #2E8DDF;
 	float: right;
 }
 
-.msg > div:first-child {
-	padding: 10px;
-	border-radius: 5px;
-	width: 90%;
+.msg .received {
+	background-color: #D8D7D7;
+	color: black;
 }
 
-.msg .msg-body p {
+.msg > div:first-child {
+	width: 90%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.msg .body p {
 	padding: 0px;
 	margin: 0px;
 }
 
-.chats {
-	padding: 5px 25px 5px 20px;
-	width: 50%;
-	display: block;
-}
-
-.received-msg {
-	background-color: lightgray;	
-}
-
-.sent-msg {
-	background-color: lightblue;
-	right: 0px;
-}
-
-.footer {
+.main-footer {
+	height: 8%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background-color: white;
 	display: flex;
-	border-top: 1px solid grey;
-	height: 100%;
+	box-shadow: 0px -2px 5px 0.25px grey;
+	z-index: 2;
 }
 
-.footer input[type=text] {
+.main-footer input[type=text] {
+	width: 80%;
+	height: 100%;
+	font-size: 1.5em;
+}
+
+.main-footer textarea {
 	width: 85%;
-	min-height: 100%;
 	height: 100%;
-	border: none;
-	padding: 0px 0px 0px 15px;
-	font-size: 25px;
-}
-
-.footer input[type=text]:focus {
-	min-height: 100%;
-	height: 100%;
-	/* TODO: OUTLINE REMOVAL FROM MOST ELEMENTS ???? */
-	outline: none;
-}
-
-.footer textarea {
+	font-size: 1.5em;
 	resize: none;
 	border: none;
-	width: 85%;
-	height: 100%;
-	font-size: 5vw;
-	padding: 15px 0px 0px 15px;
 	justify-content: center;
+	overflow-y: auto;
 }
 
-.footer button{
+.main-footer button {
 	width: 15%;
-	min-height: 100%;
 	height: 100%;
+	padding: 2px;
 	border: none;
-	background-color: white;
+	background: #2E8DDF;
+	color: white;
 }

@@ -4,8 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<title>Blank App</title>
-		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
-		
+		<link rel="stylesheet" type="text/css" href="./CSS/all.css">		
 		<link rel="stylesheet" type="text/css" href="./CSS/main.css">
 		<link rel="stylesheet" type="text/css" href="./CSS/accounts.css">
 		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
@@ -15,18 +14,45 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="topnav">
-						<a href="myShifts.html"><i class="far fa-clock fa-3x fa-fw"></i></a>
-						<a href="timesheets.html"><i class="far fa-edit fa-3x fa-fw"></i></a>
-						<a href="availability.html"><i class="far fa-calendar-alt fa-3x fa-fw"></i></a>
-						<a href="messages.html"><i class="far fa-comments fa-3x fa-fw"></i></a>
-						<a href="accounts.html"><i class="far fa-user-circle fa-3x fa-fw"></i></a>
+						<a href="myShifts.html"><i class="fas fa-clock fa-3x fa-fw"></i></a>
+<!--						<a href="noGridTimesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>-->
+						<a href="timesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>
+						<a href="availability.html"><i class="fas fa-calendar-alt fa-3x fa-fw"></i></a>
+						<a href="messages.html"><i class="fas fa-comments fa-3x fa-fw"></i></a>
+						<a href="accounts.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
 						<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
 						<div class="sidenav">
 							<a class="closebtn">&times;</a>
-							<a href="myShifts.html"><i class="far fa-clock fa-lg fa-fw"></i>Shifts</a>
-							<a href="timesheets.html"><i class="far fa-edit fa-lg fa-fw"></i>Timesheets</a>
-							<a href="availability.html"><i class="far fa-calendar-alt fa-lg fa-fw"></i>Availability</a>
-							<a href="accounts.html"><i class="far fa-user-circle fa-lg fa-fw"></i>Accounts</a>
+							<a href="myShifts.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-clock fa-lg"></i></div>	
+										<div class="item text">Shifts</div>										
+								</div>
+							</a>
+							<a href="timesheets.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-edit fa-lg"></i></div>	
+										<div class="item text">Timesheets</div>										
+								</div>
+							</a>
+							<a href="availability.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-calendar-alt fa-lg"></i></div>	
+										<div class="item text">Availability</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-comments fa-lg"></i></div>	
+										<div class="item text">Messages</div>										
+								</div>
+							</a>
+							<a href="messages.html">
+								<div class="flex-container">
+										<div class="item img"><i class="fas fa-cog fa-lg"></i></div>	
+										<div class="item text">Settings</div>										
+								</div>
+							</a>
 						</div>				
 					</div>
 				</div>
@@ -34,7 +60,7 @@
 			
 			<div class="row">
 				<div class="col-12">
-					<div class="border-header">
+					<div class="header">
 						<h3>Settings</h3>
 					</div>			
 				</div>	
@@ -42,39 +68,116 @@
 			
 			<div class="row">
 				<div class="col-12">
-					<div class="menu-item">
-						<p>Account</p>
-					</div>
-				</div>	
-			</div>
-			
-			<div class="row">
-				<div class="col-12">
-					<div class="menu-item">
-						<p>Display</p>
-					</div>
-				</div>	
-			</div>
-			
-			<div class="row">
-				<div class="col-12">
-					<div class="menu-item">
-						<p>Help</p>
-					</div>
-				</div>	
-			</div>
-			
-			<div class="row">
-				<div class="col-12">
-					<div class="menu-item">
-						<p>About</p>
+					<div class="menu">
+						<div class="item" id="accounts">
+							<div class="item-header">
+								<i class="fas fa-user-edit fa-2x fa-fw"></i>
+								<h4>Account</h4>
+							</div>
+							<div class="item-body">
+								<form action="" method="post" id="accounts-form">
+									<div class="flex-container">
+										<p><b>First name</b></p>
+										<input type="text" value="William" placeholder="Your first name.." required disabled>
+										<p><b>Last name</b></p>
+										<input type="text" value="Cardoso" placeholder="Your last name.." required disabled>
+										<p><b>Email address</b></p>
+										<input type="email" value="willaay96@hotmail.com" placeholder="Your email address.." required disabled>
+										<p><b>Mobile number</b></p>
+										<input type="tel" value="07824166008" placeholder="Your mobile number.." disabled>
+									</div>
+									<div class="form-footer">
+										<input type="button" value="Edit">
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="item" id="communication">
+							<div class="item-header">
+								<i class="fas fa-comment-dots fa-2x fa-fw"></i>
+								<h4>Communication</h4>
+							</div>
+							<div class="item-body">
+								<form action="" method="post" id="communication-form">
+									<div class="flex-container">
+										<p><b>Allow Messaging</b></p>
+										<div class="toggle">
+											<label class="toggle-switch">
+												<input type="checkbox" disabled>
+												<span class="slider round"></span>
+											</label>
+										</div>
+										<p><b>Allow Push Notifications</b></p>
+										<div class="toggle">
+											<label class="toggle-switch">
+												<input type="checkbox" disabled>
+												<span class="slider round"></span>
+											</label>
+										</div>
+										<p><b>Allow Location</b></p>
+										<div class="toggle">
+											<label class="toggle-switch">
+												<input type="checkbox" disabled>
+												<span class="slider round"></span>
+											</label>
+										</div>						
+									</div>
+									<div class="form-footer">
+										<input type="button" value="Edit">
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="item" id="help">
+							<div class="item-header">
+								<i class="fas fa-info fa-2x fa-fw"></i>
+								<h4>Help</h4>
+							</div>
+							<div class="item-body">
+								<div class="flex-container">
+									<p id="help-shifts">How to: Check your shifts</p>
+									<p id="help-timesheets">How to: Get your timesheets signed</p>
+									<p id="help-availability">How to: Enter your availability</p>
+								</div>
+								
+								
+							</div>
+						</div>
 					</div>
 				</div>	
 			</div>
 		</div>
 		
+		<div class="overlay">
+			<div class="overlay-grid">
+				<div class="row">
+					<div class="col-12">
+						<div class="header">
+							<i class="fas fa-angle-left fa-2x fa-fw" id="overlay-cancel"></i>
+							<h3>Helpsheet Title</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="footer">
+							<input type="button" value="Cancel">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<!-- name the div class -->
 		<!-- enter the url to be sending the new info -->
+<!--
 		<form action="" method="post">
 			<h3>Account Information</h3>
 			<p>First name:</p>
@@ -84,7 +187,7 @@
 			<p>Email address:</p>
 			<input type="text" id="account-email" class="edit-info" value="willaay96@hotmail.com" disabled>
 			<p>Company name:</p>
-			<!-- make company name non changeable -->
+			 make company name non changeable 
 			<input type="text" id="account-company" value="Alfa Personnel" disabled>
 
 			<h3>Communication Settings</h3>
@@ -96,6 +199,7 @@
 			<input type="button" id="edit" value="Edit">
 			<input type="button" id="cancel" value="Cancel" disabled>
 		</form>
+-->
 		
 		<script type="text/javascript" src="./JS/main.js"></script>
 		<script type="text/javascript" src="./JS/accounts.js"></script>
