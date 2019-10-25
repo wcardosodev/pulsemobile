@@ -102,5 +102,5 @@ function DoLogin() {
 	//if success move to the next screen
 	//document.location.href = "http://172.16.0.18:3000/myAccounts.html";
 //	document.location.href = "./myShifts.html";
-	document.location.href = "./myShifts.html";
+	document.location.href = "./availabilityNEW.html";
 }

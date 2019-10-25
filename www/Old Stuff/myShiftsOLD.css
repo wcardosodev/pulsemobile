@@ -1,0 +1,124 @@
+.grid-container {
+	display: grid;
+	/* Might have to change this based on the current page as each page will have different row values */
+	grid-template-rows: 8% 10% 61% 7% 7% 7%;
+	height: 100%;
+}
+
+/*
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	position: relative;
+}
+*/
+
+.dynamic-table {
+	max-height: 100%;
+	overflow-x: auto;
+	overflow-y: auto;
+/*
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+*/
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	
+/*
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+*/
+}
+
+table * {
+	font-size: 1em;
+}
+
+table thead th {
+	position: sticky;
+	top: 0;
+}
+
+thead, th {
+	background-color: #0984e3;
+	color: white;
+/*	border-bottom: 1px solid black;*/
+}
+
+th {
+	text-align: left;
+	height: 50px;
+}
+
+td {
+	border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+	/* TODO change this color*/
+	background-color: white;
+}
+
+tbody tr:nth-child(even) {
+	background-color: lightgray;
+}
+
+tbody tr td {
+	padding: 5px 0px;
+}
+
+table input[type=button] {
+/*
+	border: none;
+	background: none;
+*/
+	padding: 0px 5px 0px 0px;
+	margin: 0px;
+}
+
+.radio-container {
+	height: 100%;
+	width: 100%;
+}
+
+.radio-container label {
+	background-color: black;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	display: block;
+}
+
+.radio-container input[type=radio] {
+	display: none;
+}
+
+input[type=radio]:checked+label {
+	background-color: #0984e3;
+}
+
+.datepickers {
+	width: 100%;
+	display: none;
+}
+
+.datepickers input[type=date] {
+	width: 90%;
+	padding: 2px;
+	margin-left: 5px;
+}
+
+#button-submit {
+	width: 100%;
+	background-color: #0984e3;
+	color: white;
+	height: 100%;
+	border: none;
+	font-size: 18px;
+	font-weight: 700;
+}

@@ -1,124 +1,184 @@
-.grid-container {
-	display: grid;
-	/* Might have to change this based on the current page as each page will have different row values */
-	grid-template-rows: 8% 10% 61% 7% 7% 7%;
-	height: 100%;
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: default;
+	outline: none;	
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	font-family: "Lucida Sans", sans-serif;
 }
 
-/*
-.header {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 100%;
-	position: relative;
-}
-*/
-
-.dynamic-table {
-	max-height: 100%;
-	overflow-x: auto;
-	overflow-y: auto;
-/*
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-*/
-}
-
-table {
-	border-collapse: collapse;
-	width: 100%;
+body {
+	height: 100vh;
+	width: 100vw;
 	
-/*
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-*/
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
 }
 
-table * {
-	font-size: 1em;
-}
-
-table thead th {
-	position: sticky;
-	top: 0;
-}
-
-thead, th {
-	background-color: #0984e3;
-	color: white;
-/*	border-bottom: 1px solid black;*/
-}
-
-th {
-	text-align: left;
-	height: 50px;
-}
-
-td {
-	border-bottom: 1px solid black;
-}
-
-tbody tr:nth-child(odd) {
-	/* TODO change this color*/
+.main-header {
+	height: 8%;
+	margin: 0px;
+	padding: 0px;
+	
+	z-index: 2;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
 	background-color: white;
 }
 
-tbody tr:nth-child(even) {
-	background-color: lightgray;
+.main-content {
+	height: 64%;
+	overflow-y: auto;
+	overflow-x: auto;
 }
 
-tbody tr td {
-	padding: 5px 0px;
-}
-
-table input[type=button] {
-/*
-	border: none;
-	background: none;
-*/
-	padding: 0px 5px 0px 0px;
-	margin: 0px;
-}
-
-.radio-container {
-	height: 100%;
+table#shifts-table {
 	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border-collapse: collapse;
 }
 
-.radio-container label {
-	background-color: black;
+table#shifts-table * {
+	font-size: 1em;
+}
+
+table#shifts-table thead tr th {
+	height: 40px;
+	
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	text-align: left;
+	
+	background-color: #2E8DDF;
 	color: white;
+}
+
+table#shifts-table thead tr th.table-actions {
 	text-align: center;
-	line-height: 50px;
+}
+
+table#shifts-table tbody tr td {
+	padding: 10px 0px;
+}
+
+table#shifts-table tbody tr:nth-child(even) {
+	background-color: #D8D7D7;
+}
+
+table#shifts-table tbody tr td input {
+	margin-left: 3px;
+	padding: 5px 10px;
+	
+	border: none;
+	border-radius: 3px;
+	background-color: #2E8DDF;
+	color: white;
+}
+
+.main-footer {
+	height: 20%;
+}
+
+.main-footer .flex-buttons {
+	height: 33%;
+	display: flex;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: center;
+	
+	border-top: 2px solid white;
+}
+
+.main-footer .flex-buttons label {
+	height: 100%;
+	width: calc(100%/3);
+	
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	
+  background-color: #D8D7D7;
+	color: black;
+}
+
+.main-footer .flex-buttons label:first-child {
+  background-color: #2E8DDF;
+	color: white;
+}
+
+.main-footer .flex-buttons label input[type=radio] {
+	display: none;
+}
+
+.main-footer .date-pickers {
+	height: 34%;
+	display: flex;
+}
+
+.main-footer .date-pickers div {
+	width: 50%;
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-right: 15px;
+	
+	display: none;
+}
+
+.main-footer .date-pickers div label {
+	width: 100%;
 	display: block;
 }
 
-.radio-container input[type=radio] {
-	display: none;
-}
-
-input[type=radio]:checked+label {
-	background-color: #0984e3;
-}
-
-.datepickers {
+.main-footer .date-pickers div input[type=date] {
 	width: 100%;
-	display: none;
 }
 
-.datepickers input[type=date] {
-	width: 90%;
-	padding: 2px;
-	margin-left: 5px;
+.main-footer .search-button {
+	height: 33%;
 }
 
-#button-submit {
+.main-footer .search-button input[type=button] {
 	width: 100%;
-	background-color: #0984e3;
-	color: white;
 	height: 100%;
+	
 	border: none;
-	font-size: 18px;
-	font-weight: 700;
+	background-color: #2E8DDF;
+	color: white;
+	
+	font-size: 1em;
 }
+
+/*
+.main-footer .flex-buttons div.radio-btn {
+	width: calc(100%/3);
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	
+	background-color: red;
+	color: white;
+}
+
+.main-footer .flex-buttons div label {
+	
+}
+
+.main-footer .flex-buttons sinput[type=radio] {
+	display: none;
+}
+
+.main-footer .flex-buttons div input[type=radio]:checked+label {
+	
+}*/

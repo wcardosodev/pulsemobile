@@ -1,15 +1,85 @@
-.grid-container {
-	display: grid;
-	/* Might have to change this based on the current page as each page will have different row values */
-	/* 1st row = navbar should always be 6% */
-	grid-template-rows: 8% 10% 25%;
-	height: 100%;
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: default;
+	outline: none;	
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	font-family: "Lucida Sans", sans-serif;
 }
 
-.overlay-grid {
-	display: grid;
-	grid-template-rows: 8% auto 8%;
-	height: 100%;
+body {
+	height: 100vh;
+	width: 100vw;
+	
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.main-header {
+	height: 8%;
+	margin: 0px;
+	padding: 0px;
+	
+	z-index: 2;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	background-color: white;
+}
+
+.main-content {
+	height: 84%;
+	background-color: white;
+}
+
+.main-content .month-header {
+	height: 30%;
+	margin: 0px 2px;
+	
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	align-items: center;
+	
+	background-color: #2E8DDF;
+	color: white;
+	
+	border: 1px solid black;
+}
+
+.main-content .month-header p {
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: center;
+}
+
+.main-content .availability-table {
+	height: 70%;
+	width: 100%;
+}
+
+.main-content .availability-table thead tr th {
+	height: 60px;
+	
+	background-color: #2E8DDF;
+	color: white;
+	border: 1px solid black;
+}
+
+.main-content .availability-table tbody tr td {
+	height: calc(100%/6);
+	width: calc(100%/7);
+	text-align: center;
+	border: 1px solid black;
+}
+
+.main-content .availability-table tbody tr td.blank {
+	background-color: grey;
 }
 
 #overlay {
@@ -32,248 +102,78 @@
 	right: 0;
 }
 
-#overlay .overlay-header i {
-	width: 20%;
-}
-
-#overlay .overlay-header h3 {
-	width: 60%;
-}
-
-#overlay ul {
-	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
-}
-
-#overlay ul li, #overlay ul h3 {
-	display: inline-block;
-}
-
-#overlay .overlay-header {
-	display: flex;
-	justify-content:flex-start;
-	align-items: center;
-/*	border-bottom: 1px solid black;*/
-	background-color: #0984e3;
-	color: white;
-	padding: 0px 4% 0px 0px;
-	margin: 0px;
-	height: 100%;
-}
-
-/*
-#overlay .overlay-header #overlay-cancel {
-	padding: 0px 20% 0px 0px;
-}
-
-#overlay .overlay-header #overlay-dateheader {
-	padding: 0px 15% 0px 0px;
-}
-
-##overlay .overlay-header #overlay-search {
-	padding: 0px 0px 0px 20%;
-}
-*/
-
-/*
-#overlay .overlay-header #overlay-cancel, #overlay .overlay-header #overlay-dateheader {
-	padding: 0px 5%;
-}
-
-#overlay .overlay-header #overlay-search {
-	padding: 0px 0px 0px 5%;
-}
-*/
-
-/*
-#overlay .overlay-header {
-	border-bottom: 1px solid black;
-	background-color: lightgrey;
-	height: 100%;
-}
-
-#overlay .overlay-header .overlay-parent {
-	position: relative;
-}
-
-#overlay .overlay-header #overlay-cancel, #overlay .overlay-header #overlay-search {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-
-#overlay .overlay-header #overlay-search {
-	padding: 17.5% 0px 0px 0px;
-}
-*/
-
-#overlay .overlay-row {
-	margin: 5px;
-	text-align: center;
-}
-
-#overlay input[type=radio] {
-/*	display: none;*/
-}
-
-#overlay input[type=radio]:checked+label {
-	border: 1px solid black;
-	padding: 10px 20px;
-	box-shadow: 0px 0px 5px black;
-}
-
-#overlay label {
-	padding: 7.5px 15px;
-	display: inline-block;
-}
-
-#overlay label.availability-yes {
-	background-color: green;
-}
-
-#overlay label.availability-maybe {
-	background-color: yellow;
-}
-
-#overlay label.availability-no {
-	background-color: red;
-}
-
-#overlay form {
-	height: 100%;
-}
-
-#overlay .overlay-footer {
-	height: 100%;
-}
-
-#overlay .overlay-footer input {
-	width: 100%;
-	height: 100%;
-	display: block;
-	background-color: #0984e3;
-	color: white;
-	border: none;
-	font-size: 1em;
-	font-weight: 700;
-}
-
-.availability-calendar {
-	height: 100%;
-}
-
-.header {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 100%;
-	position: relative;
-}
-
-.month-header {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	background-color: #0984e3;
-	border: 1px solid black;
-	margin: 0px 2px;
-	text-align: center;
-	height: 100%;
-	color: white;
-}
-
-.month-header p {
-	font-size: 1.5em;
-	font-weight: 700;
-}
-
-table.availability-table {
-	width: 100%;
-	height: 100%;
-	margin: 0px;
-	padding: 0px;
-}
-
-table.availability-table thead tr {
-  background-color: #0984e3;
-	color: white;
-	height: 10vh;
-}
-
-table.availability-table tbody tr {
-	background-color: white;
-	height: calc(100%/6);
-}
-
-table.availability-table tbody tr td:hover {
-	background-color: #0984e3;
-}
-
-table.availability-table th, table.availability-table td {
-	border: 1px solid black;
-	text-align: center;
-	width: calc(100%/7);
-}
-
-/* CSS for the colouring of the table cells based on availability */
-table.availability-table tbody tr td.available {
-	background-color: #2ecc71;
-}
-
-table.availability-table tbody tr td.working {
-	background-color: yellow;
-}
-
-table.availability-table tbody tr td.notavailable {
-	background-color: red;
-}
-
-table.availability-table tbody tr td.holiday {
-	background-color: orange;
-}
-
-table.availability-table tbody tr td.blank {
-	background-color: grey;
-}
-
-table.overlay-availability {
-	width: 100%;
-	height: 100%;
-	margin: 0px;
-	padding: 0px;
-	font-size: 1em;
-	font-weight: 700;
-}
-
-table.overlay-availability thead tr * {
+#overlay .header {
+	height: 8%;
 	
-}
-
-/*
-table.overlay-availability tbody tr:nth-child(even) {
-	background-color: white;
-}
-*/
-
-table.overlay-availability tbody tr:nth-child(odd) {
-/*
-	background-color: lightgray;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	align-items: center;
+	
+	text-align: center;
 	color: white;
-*/
+	background-color: #2E8DDF;
+	
+	font-size: 1.2em;
 }
 
-table.overlay-availability tbody tr td:first-child {
-/*	width: 25%;*/
-	max-width: 25%;
+#overlay .header i, #overlay .header h3 {
+	padding-right: 15px;
 }
 
-table.overlay-availability tbody tr td:not(:first-child){
-/*	max-width: calc(100%/4);*/
+#overlay .body {
+	height: 84%;
 }
 
-table.overlay-availability tbody tr td input[type=radio] {
-	transform: scale(1.5);
+#overlay .body form {
+	height: 100%;
+	width: 100%;
+}
+
+#overlay .body form table{
+	height: 100%;
+	width: 100%;
+}
+
+#overlay .body form table thead tr th {
+	font-size: 1.2em;
+	height: 40px;
+}
+
+#overlay .body form table thead tr th input[type=button] {
+	width: 100%;
+	
+	padding: 5px 10px;
+	font-size: 1em;
+	
+	border: none;
+	border-radius: 3px;
+	background-color: #2E8DDF;
+	color: white;
+}
+
+#overlay .body form table tbody tr td{
+	font-size: 1.2em;
+}
+
+
+#overlay .body form table tbody tr td input[type=radio]{
+	transform: scale(2);
+}
+
+
+
+#overlay .footer {
+	height: 8%;
+}
+
+#overlay .footer input[type=submit] {
+	width: 100%;
+	height: 100%;
+	
+	font-size: 1.2em;
+	
+	border: none;
+	background-color: #2E8DDF;
+	color: white;
 }

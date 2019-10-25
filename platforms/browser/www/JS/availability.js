@@ -17,7 +17,7 @@ $(document).ready(function() {
 		ResetCalendarDate();
 	})
 	
-	$('.availability-calendar table tbody').on('click', 'td', function () {
+	$('.availability-table tbody').on('click', 'td', function () {
 		var clickedBtnID = $(this).attr('id');
 		// if has an id value
 		if (typeof clickedBtnID !== 'undefined') {
@@ -89,7 +89,7 @@ function GetDateForOverlay(day, month) {
 	var d = day,
 			m = IntToMonth(month),
 			y = $('.month-header #yeartext').text();
-	$('#overlay-dateheader').html(m + ' ' + OrdinalSuffix(d) + ', ' + y);
+	$('#overlay #overlay-header').html(m + ' ' + OrdinalSuffix(d) + ', ' + y);
 }
 
 function OrdinalSuffix(i) {
@@ -157,7 +157,7 @@ function LoadCalendar (date) {
 	
 	var	startd = StartDay(date.getMonth() + 1, date.getFullYear()),
 			days = DaysInMonth(date.getMonth() + 1, date.getFullYear()),
-			table = $('.availability-calendar table tbody')[0],
+			table = $('.availability-table tbody')[0],
 			rowValue = 0,
 			cellValue = startd - 1,
 			i;
@@ -188,7 +188,7 @@ function LoadCalendar (date) {
 }
 
 function ResetCalendar() {
-	var table = $('.availability-calendar table tbody td');
+	var table = $('.availability-table tbody td');
 	table.html('');
 	table.removeAttr('id');
 	table.removeAttr('class');

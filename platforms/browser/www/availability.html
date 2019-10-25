@@ -2,338 +2,233 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
 		<title>Blank App</title>
-		<link rel="stylesheet" type="text/css" href="./CSS/all.css">
-		
-		<link rel="stylesheet" type="text/css" href="./CSS/main.css">
-		<link rel="stylesheet" type="text/css" href="./CSS/availability.css">
+		<link rel="stylesheet" type="text/css" href="CSS/all.css">
+		<link rel="stylesheet" type="text/css" href="CSS/navigation-bar.css">
+		<link rel="stylesheet" type="text/css" href="CSS/availability.css">
 		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
   </head>
   <body>
-		<div class="grid-container">
-			<div class="row">
-				<div class="col-12">
-					<div class="topnav">
-						<a href="myShifts.html"><i class="fas fa-clock fa-3x fa-fw"></i></a>
-						<a href="timesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>
-						<a href="availability.html"><i class="fas fa-calendar-alt fa-3x fa-fw"></i></a>
-						<a href="messages.html"><i class="fas fa-comments fa-3x fa-fw"></i></a>
-						<a href="accounts.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
-						<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>	
-						<div class="sidenav">
-							<a class="closebtn">&times;</a>
-							<a href="myShifts.html">
-								<div class="flex-container">
-										<div class="item img"><i class="fas fa-clock fa-lg"></i></div>	
-										<div class="item text">Shifts</div>										
-								</div>
-							</a>
-							<a href="timesheets.html">
-								<div class="flex-container">
-										<div class="item img"><i class="fas fa-edit fa-lg"></i></div>	
-										<div class="item text">Timesheets</div>										
-								</div>
-							</a>
-							<a href="availability.html">
-								<div class="flex-container">
-										<div class="item img"><i class="fas fa-calendar-alt fa-lg"></i></div>	
-										<div class="item text">Availability</div>										
-								</div>
-							</a>
-							<a href="messages.html">
-								<div class="flex-container">
-										<div class="item img"><i class="fas fa-comments fa-lg"></i></div>	
-										<div class="item text">Messages</div>										
-								</div>
-							</a>
-							<a href="messages.html">
-								<div class="flex-container">
-										<div class="item img"><i class="fas fa-cog fa-lg"></i></div>	
-										<div class="item text">Settings</div>										
-								</div>
-							</a>
-						</div>				
-					</div>
+		<div class="topnav">
+			<a href="myShifts.html"><i class="fas fa-clock fa-3x fa-fw"></i></a>
+			<a href="timesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>
+			<a href="availability.html"><i class="fas fa-calendar-alt fa-3x fa-fw"></i></a>
+			<a href="messages.html"><i class="fas fa-comments fa-3x fa-fw"></i></a>
+			<a href="accounts.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
+			<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>
+			<div class="sidenav">
+				<div class="flex-col left">
+					<a href="myShifts.html">
+						<div class="item img">
+							<i class="fas fa-clock fa-3x"></i>
+						</div>
+					</a>
+					<a href="timesheets.html">
+						<div class="item img">
+							<i class="fas fa-edit fa-3x"></i>
+						</div>
+					</a>
+					<a href="availability.html">
+						<div class="item img">
+							<i class="fas fa-calendar-alt fa-3x"></i>
+						</div>
+					</a>
+					<a href="messages.html">
+						<div class="item img">
+							<i class="fas fa-comments fa-3x"></i>
+						</div>
+					</a>
+					<a href="accounts.html">
+						<div class="item img">
+							<i class="fas fa-cog fa-3x"></i>
+						</div>
+					</a>
+					<a id="navbar-sign-out">
+						<div class="item img">
+							<i class="fas fa-sign-out-alt fa-3x"></i>
+						</div>
+					</a>
+					<a id="navbar-close">
+						<div class="item img">
+							<i class="fas fa-window-close fa-3x"></i>
+						</div>
+					</a>
+				</div>
+				<div class="flex-col right">
+					<a href="myShifts.html">
+						<div class="item text">
+							<span>Shifts</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="timesheets.html">
+						<div class="item text">
+							<span>Timesheets</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="availability.html">
+						<div class="item text">
+							<span>Availability</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="messages.html">
+						<div class="item text">
+							<span>Messages</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="accounts.html">
+						<div class="item text">
+							<span>Settings</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a>
+						<div class="item text">
+							<span>Log out</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a>
+						<div class="item text">
+						</div>
+					</a>
 				</div>
 			</div>
-			
-			<div class="row">
-				<div class="col-12">
-					<div class="header">
-						<h3>Availability</h3>
-					</div>
-				</div>	
-			</div>
-			
-			<div class="row">
-				<div class="col-12">
-					<div class="month-header">
-						<i id="month-prev" class="fas fa-angle-left fa-2x fa-fw"></i>
-						<p><span id="monthtext"></span><br><span id="yeartext"></span></p>
-						<i id="month-next" class="fas fa-angle-right fa-2x fa-fw"></i>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-12">
-					<div class="availability-calendar">
-						<table class="availability-table">
-							<thead>
-								<tr>
-									<th>Mon</th>
-									<th>Tue</th>
-									<th>Wed</th>
-									<th>Thu</th>
-									<th>Fri</th>
-									<th>Sat</th>
-									<th>Sun</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			
-			<!-- how to input availability? -->
-<!--
-			<div class="row">
-				<div class="">
-					<div class="col-6">
-						<p>Available buttons</p>					
-					</div>
-					<div class="col-6">
-						<p>Unavailable buttons</p>
-					</div>
-				</div>
-			</div>
-	-->
 		</div>
-		
+		<div class="main-header">
+			<h3>Availability</h3>
+		</div>
+		<div class="main-content">
+			<div class="month-header">
+				<i id="month-prev" class="fas fa-angle-left fa-2x fa-fw"></i>
+				<p><span id="monthtext">October</span><br><span id="yeartext"></span></p>
+				<i id="month-next" class="fas fa-angle-right fa-2x fa-fw"></i>
+			</div>
+			<table class="availability-table">
+				<thead>
+					<tr>
+						<th>Mon</th>
+						<th>Tue</th>
+						<th>Wed</th>
+						<th>Thu</th>
+						<th>Fri</th>
+						<th>Sat</th>
+						<th>Sun</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 		<div id="overlay">
-			<div class="overlay-grid">
-				<div class="row">
-					<div class="col-12">
-						<div class="overlay-header">
-							<i class="fas fa-angle-left fa-2x fa-fw" id="overlay-cancel"></i>
-							<h3 id="overlay-dateheader"></h3>
-<!--							<i class="fas fa-search fa-lg fa-fw" id="overlay-search"></i>-->
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<form id="availability-form" action="" method="post">
-							<table class="overlay-availability">
-								<thead>
-									<tr>
-										<th></th>
-										<th>Available<br><input type="button" value="Select All" id="selectall-available"></th>
-										<th>Not sure<br><input type="button" value="Select All" id="selectall-notsure"></th>
-										<th>Not available<br><input type="button" value="Select All" id="selectall-notavailable"></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Early</td>
-										<td><input type="radio" name="availability-early" id="availability-early-available"></td>
-										<td><input type="radio" name="availability-early" id="availability-early-notsure"></td>
-										<td><input type="radio" name="availability-early" id="availability-early-notavailable"></td>
-									</tr>
-									<tr>
-										<td>Late</td>
-										<td><input type="radio" name="availability-late" id="availability-late-available"></td>
-										<td><input type="radio" name="availability-late" id="availability-late-notsure"></td>
-										<td><input type="radio" name="availability-late" id="availability-late-notavailable"></td>
-									</tr>
-									<tr>
-										<td>Day</td>
-										<td><input type="radio" name="availability-day" id="availability-day-available"></td>
-										<td><input type="radio" name="availability-day" id="availability-day-notsure"></td>
-										<td><input type="radio" name="availability-day" id="availability-day-notavailable"></td>
-									</tr>
-									<tr>
-										<td>Night</td>
-										<td><input type="radio" name="availability-night" id="availability-night-available"></td>
-										<td><input type="radio" name="availability-night" id="availability-night-notsure"></td>
-										<td><input type="radio" name="availability-night" id="availability-night-notavailable"></td>
-									</tr>
-								</tbody>
-							</table>
-						</form>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="overlay-footer">
-							<input type="submit" id="submit-availability" form="availability-form" value="Submit">
-						</div>						
-					</div>
-				</div>
+			<div class="header">
+				<i class="fas fa-angle-left fa-2x fa-fw" id="overlay-cancel"></i>
+				<h3 id="overlay-header"></h3>
+				<i></i>
+			</div>
+			<div class="body">
+				<form id="availability-form" action="" method="post">
+					<table class="overlay-availability">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Available<br><input type="button" value="Select All" id="selectall-available"></th>
+								<th>Not sure<br><input type="button" value="Select All" id="selectall-notsure"></th>
+								<th>Not available<br><input type="button" value="Select All" id="selectall-notavailable"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Early</td>
+								<td><input type="radio" name="availability-early" id="availability-early-available"></td>
+								<td><input type="radio" name="availability-early" id="availability-early-notsure"></td>
+								<td><input type="radio" name="availability-early" id="availability-early-notavailable"></td>
+							</tr>
+							<tr>
+								<td>Late</td>
+								<td><input type="radio" name="availability-late" id="availability-late-available"></td>
+								<td><input type="radio" name="availability-late" id="availability-late-notsure"></td>
+								<td><input type="radio" name="availability-late" id="availability-late-notavailable"></td>
+							</tr>
+							<tr>
+								<td>Day</td>
+								<td><input type="radio" name="availability-day" id="availability-day-available"></td>
+								<td><input type="radio" name="availability-day" id="availability-day-notsure"></td>
+								<td><input type="radio" name="availability-day" id="availability-day-notavailable"></td>
+							</tr>
+							<tr>
+								<td>Night</td>
+								<td><input type="radio" name="availability-night" id="availability-night-available"></td>
+								<td><input type="radio" name="availability-night" id="availability-night-notsure"></td>
+								<td><input type="radio" name="availability-night" id="availability-night-notavailable"></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="footer">
+				<input type="submit" form="availability-form" value="Submit Availability">
 			</div>
 		</div>
-			
-<!--
-			<div class="overlay-grid">
-				<div class="row">
-					<div class="col-6">
-					
-					</div>
-					<div class="col-2">
-					
-					</div>
-					<div class="col-2">
-					
-					</div>
-					<div class="col-2">
-					
-					</div>
-				</div>
-			</div>
-			<div class="row">
-					<div class="col-12">
-						<div class="overlay-body">
-							<form>
-								<label>Early</label>
-								<input type="radio">
-								<input type="button" value="Edit">
-							</form>
-						</div>
-					</div>
-				</div>
--->
-
-			
-			
-<!--
-			<div class="overlay-grid">
-				<div class="row">
-					<div class="overlay-header">
-						<div class="col-2 overlay-parent">
-							<i class="fas fa-angle-left fa-2x fa-fw" id="overlay-cancel"></i>
-						</div>
-						<div class="col-8">
-							<h3 id="overlay-dateheader"></h3>
-						</div>
-						<div class="col-2 overlay-parent">
-							<i class="fas fa-search fa-lg fa-fw" id="overlay-search"></i>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-					
-					</div>
-				</div>
--->
-			
-		
-<!--
-				<ul class="overlay-header">
-					<li id="overlay-cancel">&#10094;</li>
-					<li><span><h3 id="dateheaderoverlay"></h3></span></li>
-					<li id="overlay-search"><i class="fas fa-search fa-lg fa-fw"></i></li>
-				</ul>
-				<div class="overlay-row">
-					<p>Early</p>
-					<input type="radio" name="availabilityradio-early" id="availabilityradio-early-yes" checked>
-					<label for="availabilityradio-early-yes" class="availability-yes">Available</label>
-					<input type="radio" name="availabilityradio-early" id="availabilityradio-early-maybe">
-					<label for="availabilityradio-early-maybe" class="availability-maybe">Not sure</label>
-					<input type="radio" name="availabilityradio-early" id="availabilityradio-early-no">
-					<label for="availabilityradio-early-no" class="availability-no">Not Available</label>
-				</div>
-				<div class="overlay-row">
-					<p>Late</p>
-					<input type="radio" name="availabilityradio-late" id="availabilityradio-late-yes">
-					<label for="availabilityradio-late-yes" class="availability-yes">Available</label>
-					<input type="radio" name="availabilityradio-late" id="availabilityradio-late-maybe" checked>
-					<label for="availabilityradio-late-maybe" class="availability-maybe">Not sure</label>
-					<input type="radio" name="availabilityradio-late" id="availabilityradio-late-no">
-					<label for="availabilityradio-late-no" class="availability-no">Not Available</label>
-				</div>
-				<div class="overlay-row">
-					<p>Day</p>
-					<input type="radio" name="availabilityradio-day" id="availabilityradio-day-yes">
-					<label for="availabilityradio-day-yes" class="availability-yes">Available</label>
-					<input type="radio" name="availabilityradio-day" id="availabilityradio-day-maybe">
-					<label for="availabilityradio-day-maybe" class="availability-maybe">Not sure</label>
-					<input type="radio" name="availabilityradio-day" id="availabilityradio-day-no" checked>
-					<label for="availabilityradio-day-no" class="availability-no">Not Available</label>
-				</div>
-				<div class="overlay-row">
-					<p>Night</p>
-					<input type="radio" name="availabilityradio-night" id="availabilityradio-night-yes" checked>
-					<label for="availabilityradio-night-yes" class="availability-yes">Available</label>
-					<input type="radio" name="availabilityradio-night" id="availabilityradio-night-maybe">
-					<label for="availabilityradio-night-maybe" class="availability-maybe">Not sure</label>
-					<input type="radio" name="availabilityradio-night" id="availabilityradio-night-no">
-					<label for="availabilityradio-night-no" class="availability-no">Not Available</label>
-				</div>
-				<input type="button" id="cancel" value="Cancel">
-				<input type="button" value="Edit">
-				<input type="button" value="Save">
-			</div>-->
-		
-		<!-- Do a monthly availability where they can fill in -->
-		<script type="text/javascript" src="./JS/main.js"></script>
-		<script type="text/javascript" src="./JS/availability.js"></script>
+		<script type="text/javascript" src="JS/navigation-bar.js"></script>
+		<script type="text/javascript" src="JS/availability.js"></script>
 	</body>
 </html>

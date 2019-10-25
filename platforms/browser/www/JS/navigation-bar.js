@@ -3,8 +3,15 @@ $(document).ready(function() {
 		$('.sidenav').toggleClass('open');
 	});
 	
-	// close
-	$('.closebtn').click(function() {
+	$('#navbar-close').click(function() {
 		$('.sidenav').toggleClass('open');
 	});
+	
+	$('#navbar-sign-out, #navbar-sign-out-img').click(function() {
+		LogOut();	
+	});
 });
+
+function LogOut () {
+	alert('wey');
+}
