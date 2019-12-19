@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+		<title>Blank App</title>
+		<link rel="stylesheet" type="text/css" href="CSS/all.css">
+		<link rel="stylesheet" type="text/css" href="CSS/navigation-bar.css">
+		<link rel="stylesheet" type="text/css" href="CSS/settings.css">
+		<script type="text/javascript" src="./JS/jquery-3.4.1.js"></script>
+<!--
+		<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+		<script>
+  		var OneSignal = window.OneSignal || [];
+  		OneSignal.push(function() {
+    	OneSignal.init({
+      	appId: "51789cd3-0a5e-4ca2-a5fc-b582888a7275",
+    	});
+  	});
+		</script>
+-->
+  </head>
+  <body>
+		<div class="topnav">
+			<a href="myShifts.html"><i class="fas fa-clock fa-3x fa-fw"></i></a>
+			<a href="timesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>
+			<a href="availability.html"><i class="fas fa-calendar-alt fa-3x fa-fw"></i></a>
+			<a href="messages.html"><i class="fas fa-comments fa-3x fa-fw"></i></a>
+			<a href="settings.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
+			<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>
+			<div class="sidenav">
+				<div class="flex-col left">
+					<a href="myShifts.html">
+						<div class="item img">
+							<i class="fas fa-clock fa-3x"></i>
+						</div>
+					</a>
+					<a href="timesheets.html">
+						<div class="item img">
+							<i class="fas fa-edit fa-3x"></i>
+						</div>
+					</a>
+					<a href="availability.html">
+						<div class="item img">
+							<i class="fas fa-calendar-alt fa-3x"></i>
+						</div>
+					</a>
+					<a href="messages.html">
+						<div class="item img">
+							<i class="fas fa-comments fa-3x"></i>
+						</div>
+					</a>
+					<a href="settings.html">
+						<div class="item img">
+							<i class="fas fa-cog fa-3x"></i>
+						</div>
+					</a>
+					<a id="navbar-sign-out">
+						<div class="item img">
+							<i class="fas fa-sign-out-alt fa-3x"></i>
+						</div>
+					</a>
+					<a id="navbar-close">
+						<div class="item img">
+							<i class="fas fa-window-close fa-3x"></i>
+						</div>
+					</a>
+				</div>
+				<div class="flex-col right">
+					<a href="myShifts.html">
+						<div class="item text">
+							<span>Shifts</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="timesheets.html">
+						<div class="item text">
+							<span>Timesheets</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="availability.html">
+						<div class="item text">
+							<span>Availability</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="messages.html">
+						<div class="item text">
+							<span>Messages</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a href="settings.html">
+						<div class="item text">
+							<span>Settings</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a id="navbar-sign-out">
+						<div class="item text">
+							<span>Log out</span>
+							<span><i class="fas fa-angle-right fa-3x"></i></span>
+						</div>
+					</a>
+					<a>
+						<div class="item text">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="main-header">
+			<h3>Settings</h3>
+		</div>
+		<div class="main-content">
+			<div class="settings-menu">
+				<div class="menu-item" id="accounts">
+					<div class="item-header">
+						<i class="fas fa-user-edit fa-2x fa-fw"></i>
+						<h4>Account Details</h4>
+					</div>
+					<div class="item-body">
+						<form>
+							<div class="flex-item">
+								<label class="item-text">First name</label>
+								<input type="text" value="Will" disabled>
+							</div>
+							<div class="flex-item">
+								<label class="item-text">Last name</label>
+								<input type="text" value="Cardoso" disabled>
+							</div>
+							<div class="flex-item">
+								<label class="item-text">Mobile number</label>
+								<input type="tel" value="07824166008" required disabled>
+							</div>
+							<div class="flex-item">
+								<label class="item-text">Email address</label>
+								<input type="email" value="willaay96@hotmail.com" required disabled>
+							</div>
+							<div class="form-buttons">
+								<input type="button" class="edit-button" value="Edit">
+								<input type="button" class="cancel-button" value="Close">
+							</div>						
+						</form>
+					</div>
+				</div>
+				<div class="menu-item" id="communication">
+					<div class="item-header">
+						<i class="fas fa-comment-dots fa-2x fa-fw"></i>
+						<h4>Communication Settings</h4>
+					</div>
+					<div class="item-body">
+						<form>
+							<div class="flex-item">
+								<label class="item-text">Allow Messaging</label>
+								<label class="toggle-button">
+									<input type="checkbox">
+									<span class="round-btn"></span>
+								</label>
+							</div>
+							<div class="flex-item">
+								<label class="item-text">Allow Push Notifications</label>
+								<label class="toggle-button">
+									<input type="checkbox">
+									<span class="round-btn"></span>
+								</label>
+							</div>
+							<div class="flex-item">
+								<label class="item-text">Allow Location</label>
+								<label class="toggle-button">
+									<input type="checkbox">
+									<span class="round-btn"></span>
+								</label>
+							</div>
+							<div class="form-buttons">
+								<input type="button" class="edit-button" value="Edit">
+								<input type="button" class="cancel-button" value="Close">
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="menu-item" id="help">
+					<div class="item-header">
+						<i class="fas fa-info fa-2x fa-fw"></i>
+						<h4>Help</h4>
+					</div>
+					<div class="item-body">
+						<div class="help-item" id="help-view-shifts">How can I view my shifts?</div>
+						<div class="help-item" id="help-shift-actions">How can I mark myself down to have arrived or left my shift?</div>
+						<div class="help-item" id="help-timesheets">How can I get my timesheets signed?</div>
+						<div class="help-item" id="help-availability">How can I enter my availability?</div>
+						<div class="help-item" id="">What do the different colours mean on the availability calendar?</div>
+						<div class="help-item" id="">How can I send messages from this app?</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="overlay" class="">
+			<div class="overlay-header">
+				<h3></h3>
+			</div>
+			<div class="overlay-body">
+			<!-- TODO ADD SCROLL WITH PICTURES TO THE HELP SHEET?? :)))) -->
+				<p>1a) Go to the "Availability" page, you can do this from the navigation bar at the top by tapping the <i class="fas fa-calendar-alt fa-lg fa-fw"></i> icon.</p><img src="Images/NavBar/TopNav.png" class="img-width320"><p>1b) Or by opening the side navigation bar using the <i class="fas fa-bars fa-sm fa-fw"></i> icon and tapping "Availability".</p><img src="Images/NavBar/SideNav.png" class="img-height360"><p>2) Once you are on the availability, you will need to find the month you are inputting your availabilty for. The calendar will default to the current month, you can tap the <i class="fas fa-angle-left fa-sm fa-fw"></i> and <i class="fas fa-angle-right fa-sm fa-fw"></i> icons next to the Month/Year Header to go back or forward a month.</p><img src="Images/Availability/CalendarMonths.png" class="img-width320"><p>3) When you have the correct month selected, you can then pick the date you wish from the calendar by tapping on it.</p><img src="Images/Availability/CalendarDays.png" class="img-width320"><p>4) When you have selected the date you wish to add to, it will open up an overlay. You will be able to see the date you are inputting your availability for at the top and you can select, using the radio buttons, what you wish to input for that day. For example, if you are Available for an Early or Late shift, but Not Available for a Night shift you can tick the radio buttons as shown below.</p><img src=""><p>5) When you are happy, tap the "Submit Availability" button to submit your availability.</p>	
+			</div>
+			<div class="overlay-footer">
+				<input type="button" class="overlay-cancel" value="Close">
+			</div>
+		</div>
+		<script type="text/javascript" src="JS/navigation-bar.js"></script>
+		<script type="text/javascript" src="JS/settings.js"></script>
+	</body>
+</html>

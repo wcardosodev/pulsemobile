@@ -178,6 +178,8 @@ function LoadSelectOptions() {
 	
 	//TODO: XML REQ TO GET THE VALS
 	
+	//TODO: When you change to that page itll load the option that has the shifts in for that day?
+	
 	option_array = [{id:1, value:'Maidenhead', name:'Maidenhead'}, {id:2, value:'Newport', name:'Newport'}];
 	
 	for (var i = 0; i < option_array.length; i++) {

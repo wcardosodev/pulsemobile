@@ -6,7 +6,7 @@
 	outline: none;	
 	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
-	font-family: "Lucida Sans", sans-serif;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 body {
@@ -142,11 +142,11 @@ table#shifts-table tbody tr td input {
 	width: 100%;
 }
 
-.main-footer .search-button {
+.main-footer .load-shifts-btn {
 	height: 33%;
 }
 
-.main-footer .search-button input[type=button] {
+.main-footer .load-shifts-btn input[type=button] {
 	width: 100%;
 	height: 100%;
 	
