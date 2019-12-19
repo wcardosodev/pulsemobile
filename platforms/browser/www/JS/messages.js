@@ -10,8 +10,12 @@ $(document).ready(function () {
 	$('#msg-send').click(function () {
 		if (!$('#txtmsg-body').val() == '') {
 			// Send message
-			sendMessage();
+			SendMessage();
 		}
+	});
+	
+	$('.message-error-btn').on('click', function() {
+		alert('howdy');	
 	});
 	
 	$(window).resize(function () {
@@ -31,30 +35,37 @@ $(document).ready(function () {
 	});	
 })
 
-function sendMessage() {
+function SendMessage() {
 	var message_list = $('#chat-page'),
 					d = new Date(),
 					now_hour = d.getHours(),
 					now_minute = d.getMinutes(),
 					date = d.getDate(),
 					months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-					message = $('#txtmsg-body').val();
+					message_input = $('#txtmsg-body'),
+					sent_status = 'Delivered';
 			
 			if (now_minute < 10) {
-				now_minute = '0'+now_minute;
+				now_minute = '0' + now_minute;
 			}
 			
 	
 			// add msg to the list
-			message_list.append('<div class="msg"><div class="sent"><div class="header"><span class="time">' + now_hour + ':' + now_minute + ' | ' + months[d.getMonth()] + ' ' + d.getDate() + '</span></div><div class="body"><p>' + message + '</p></div></div></div>');
+			message_list.append('<div class="msg"><div class="sent"><div class="header"><span class="time">' + now_hour + ':' + now_minute + ' | ' + months[d.getMonth()] + ' ' + d.getDate() + '</span></div><div class="body"><p>' + message_input.val() + '</p></div></div><div class="status"><span>' + sent_status + '</span></div></div>');
 			
 			// remove the text message from the input
-			$('#txtmsg-body').val('');
+			message_input.val('');
 	
 			// TODO: WHEN SENDING YOU NEED TO CHECK FOR A SUCCESS MESSAGE JUST LIKE WHEN LOGGING IN
+	
+			// TODO: if message fails to send, give them a lil button they can use to resend
 
 			// scroll to bottom
 			scrollToBottom();
+}
+
+function ResendMessage() {
+	
 }
 
 function loadMessages() {

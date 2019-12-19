@@ -89,7 +89,7 @@ function GetDateForOverlay(day, month) {
 	var d = day,
 			m = IntToMonth(month),
 			y = $('.month-header #yeartext').text();
-	$('#overlay #overlay-header').html(m + ' ' + OrdinalSuffix(d) + ', ' + y);
+	$('#overlay #overlay-header').html('Availability for ' + m + ' ' + OrdinalSuffix(d) + ', ' + y);
 }
 
 function OrdinalSuffix(i) {
@@ -178,7 +178,17 @@ function LoadCalendar (date) {
 		//$cell.removeClass();
 		$cell.html(i);
 		$cell.attr('id', 'date-' + i);
-		//$cell.addClass('holiday');
+		
+		// for testing the availability colors
+//		if (i > 22) {
+//			$cell.addClass('available');
+//		} else if (i > 15) {
+//			$cell.addClass('not-available');
+//		} else if (i > 9) {
+//			$cell.addClass('holiday');
+//		} else if (i > 3) {
+//			$cell.addClass('training');
+//		}
 		cellValue++;
 	}
 	

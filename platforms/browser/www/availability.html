@@ -15,7 +15,7 @@
 			<a href="timesheets.html"><i class="fas fa-edit fa-3x fa-fw"></i></a>
 			<a href="availability.html"><i class="fas fa-calendar-alt fa-3x fa-fw"></i></a>
 			<a href="messages.html"><i class="fas fa-comments fa-3x fa-fw"></i></a>
-			<a href="accounts.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
+			<a href="settings.html"><i class="fas fa-cog fa-3x fa-fw"></i></a>
 			<i class="fas fa-bars fa-3x fa-fw icon-float-right" id="sidenav-icon"></i>
 			<div class="sidenav">
 				<div class="flex-col left">
@@ -39,7 +39,7 @@
 							<i class="fas fa-comments fa-3x"></i>
 						</div>
 					</a>
-					<a href="accounts.html">
+					<a href="settings.html">
 						<div class="item img">
 							<i class="fas fa-cog fa-3x"></i>
 						</div>
@@ -80,13 +80,13 @@
 							<span><i class="fas fa-angle-right fa-3x"></i></span>
 						</div>
 					</a>
-					<a href="accounts.html">
+					<a href="settings.html">
 						<div class="item text">
 							<span>Settings</span>
 							<span><i class="fas fa-angle-right fa-3x"></i></span>
 						</div>
 					</a>
-					<a>
+					<a id="navbar-sign-out">
 						<div class="item text">
 							<span>Log out</span>
 							<span><i class="fas fa-angle-right fa-3x"></i></span>
@@ -180,9 +180,7 @@
 		</div>
 		<div id="overlay">
 			<div class="header">
-				<i class="fas fa-angle-left fa-2x fa-fw" id="overlay-cancel"></i>
 				<h3 id="overlay-header"></h3>
-				<i></i>
 			</div>
 			<div class="body">
 				<form id="availability-form" action="" method="post">
@@ -190,9 +188,12 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>Available<br><input type="button" value="Select All" id="selectall-available"></th>
-								<th>Not sure<br><input type="button" value="Select All" id="selectall-notsure"></th>
-								<th>Not available<br><input type="button" value="Select All" id="selectall-notavailable"></th>
+								<th>Available</th>
+								<th>Unsure</th>
+								<th>Not Available</th>
+<!--								<th>Available<br><input type="button" value="Select All" id="selectall-available"></th>-->
+<!--								<th>Not sure<br><input type="button" value="Select All" id="selectall-notsure"></th>-->
+<!--								<th>Not available<br><input type="button" value="Select All" id="selectall-notavailable"></th>-->
 							</tr>
 						</thead>
 						<tbody>
@@ -220,12 +221,19 @@
 								<td><input type="radio" name="availability-night" id="availability-night-notsure"></td>
 								<td><input type="radio" name="availability-night" id="availability-night-notavailable"></td>
 							</tr>
+							<tr>
+								<td>Select All</td>
+								<td><input type="button" value="Available" id="selectall-available"></td>
+								<td><input type="button" value="Unsure" id="selectall-notsure"></td>
+								<td><input type="button" value="Not Available" id="selectall-notavailable"></td>
+							</tr>
 						</tbody>
 					</table>
 				</form>
 			</div>
 			<div class="footer">
-				<input type="submit" form="availability-form" value="Submit Availability">
+				<input type="submit" form="availability-form" value="Submit">
+				<input type="button" id="overlay-cancel" value="Cancel">
 			</div>
 		</div>
 		<script type="text/javascript" src="JS/navigation-bar.js"></script>

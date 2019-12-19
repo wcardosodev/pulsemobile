@@ -5,8 +5,10 @@ $(document).ready(function() {
 	
 	FillShiftTable();
 	
-	$('#date-from').prop('value', '2019-10-25');
-	$('#date-to').prop('value', '2019-11-01');
+	var now = new Date();
+	
+//	$('#date-from').prop('value', '2019-10-25');
+//	$('#date-to').prop('value', '2019-11-01');
 	
 	$('#shifts-table').on('click', '.arrived', function() {
 		GetGeoLocation();		
@@ -39,7 +41,7 @@ $(document).ready(function() {
 		
 	})
 	
-	$('#button-submit').click(function(event) {
+	$('#load-shifts').click(function(event) {
 		event.preventDefault();
 		FillShiftTable();
 	});
@@ -91,7 +93,7 @@ function FillShiftTable() {
 
 					cell_actions.innerHTML = '<input type="button" class="arrived" id="arrived_shift' + (i + 1) + '" value="Arrived"><input type="button" class="left" id="left_shift' + (i + 1) + '" value="Left">';
 					cell_day.innerHTML = 'Mon';//objArr.rtnLiveStaff[i].NurseNo;
-					cell_date.innerHTML = '20/03';//objArr.rtnLiveStaff[i].Firstname;
+					cell_date.innerHTML = '21/10';//objArr.rtnLiveStaff[i].Firstname;
 					cell_location.innerHTML = 'Location';//objArr.rtnLiveStaff[i].Surname;
 					cell_start.innerHTML = '07:00';
 					cell_end.innerHTML = '14:00';
